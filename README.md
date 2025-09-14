@@ -1,2 +1,4 @@
-# 2526-Lab2B
-Materiale didattico per il corso di Laboratorio 2B, Anno 2025/26
+## Materiale didattico per il corso di Laboratorio 2B, Anno accademico 2025/26 
+
+Questo repository contiene gli esempi di codice fatti a lezione e il registro delle lezioni. Altro materiale utile si trova sul [corso Moodle](https://elearning.di.unipi.it/course/view.php?id=1059).
+
