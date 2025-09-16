@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
   // spiego cosa voglio leggere e lo leggo con scanf  
   puts("Inserisci il numero di elementi: ");
   int e;
-  scanf("%d",&n); // il motivo della & lo vedremo più avanti 
+  e = scanf("%d",&n); // il motivo della & lo vedremo più avanti 
   // controlli sulla lettura
   if(e!=1) {
-    puts("Valore non trovato");
+    puts("Valore da tastiera non trovato");
     exit(1);
   }
   if(n<=0) {
@@ -37,20 +37,20 @@ int main(int argc, char *argv[])
   }
   
   // crea e riempi array
-  int a[n];
+  int a[n];  // IN GENERALE NON USATE QUESTO TIPO DI ARRAY
   for(int i=0; i<n; i++)  { // esegue queste istruzioni per i=0,1,2,..n-1
     printf("Inserisci l'elemento di posto %d: ",i);                    
     e = scanf("%d", &a[i]);
     if(e!=1) {
-      puts("Valore non trovato");
+      puts("Valore dell'array non trovato");
       exit(1);
     }
   }
   
   // calcola e stampa la somma
   int somma=0;
-  for(int i=0;i<n;i++)  { // inizializ; test; aggiornamento
-    somma += a[i];
+  for(int i=0;i<n;i++)  { // ciclo for:  (inizializ; test; aggiornamento)
+    somma += a[i]; // somma = somma + a[i]
   }
   
   printf("%d\n",somma);
