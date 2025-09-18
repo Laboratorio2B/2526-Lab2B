@@ -18,14 +18,16 @@
 //  calcola la somma degli elementi dell'array
 //  stampa la somma 
 
+// da fare : effetto -O, esempio errore, ./
+
 int main(int argc, char *argv[])
 {
   int n; // definisco variabile intera di nome n
 
   // spiego cosa voglio leggere e lo leggo con scanf  
   puts("Inserisci il numero di elementi: ");
-  int e;
-  e = scanf("%d",&n); // il motivo della & lo vedremo più avanti 
+  int e; // nella riga seguente manca e=
+  scanf("%d",&n); // il motivo della & lo vedremo più avanti 
   // controlli sulla lettura
   if(e!=1) {
     puts("Valore da tastiera non trovato");
