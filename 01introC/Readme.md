@@ -7,7 +7,6 @@ Scrivere un programma `paridispari` che legge gli interi passati dalla linea di 
 ```
 paridispari 10 70 17 36 -23
 ```
-```
 al termine dell'esecuzione il file `pari.txt` deve contenere
 ```
 10
