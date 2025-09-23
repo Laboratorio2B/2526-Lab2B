@@ -14,23 +14,24 @@ Concetto di PATH, uso di `.` per indicare la directory corrente. File `.bashrc` 
 Allocazione dinamica di array in C: funzioni malloc e free, programma `sommad.c`.
 Lettura di input dalla linea di comando con argc/argv. 
 Scrittura di file in formato testo, funzioni fopen/fprintf/fclose. Programma `scrivi_primi.c`.
-
+Terminazione in caso di errori: funzione perror().
 
 -------
 
 **Lezione 3** (23/9/25)
 
 Allocazione dinamica di array in C: funzioni malloc/free/realloc, programma `scrivi_primi.c`
-Utilizzo di *valgrind* per verificare il corretto utilizzo e deallocazione degli array.
 Introduzione ai puntatori; uso di puntatori negli array.
 Significato e uso di `*` e `&`. Uso di `%p` per la stampa di un puntatore. 
-
+Prototipi di funzione; significato istruzioni `#include`
 
 -------
 
 **Lezione 4** (26/9/25)
 
+Utilizzo di *valgrind* per verificare il corretto utilizzo e deallocazione degli array.
 Esempio passaggio parametri per riferimento attraverso un puntatore: `parametri.c` e `sommadprod.c`
+
 
 ------------
 

@@ -55,12 +55,16 @@ int main(int argc, char *argv[])
   int *a;  // dichiaro che a sarà usata come array
   int capacita = 10;   // dimensione attuale dell'array
   int messi = 0;   // numero di elementi attualmente dentro l'array 
+  
+  // stampa indirizzi delle variabili del main
+  printf("--- Indirizzi di argc, n, a, messi: %p\n%p\n%p\n%p\n",&argc,&n,&a,&messi);
+
   a = malloc(capacita*sizeof(int));
   if(a==NULL) 
     termina("Malloc fallita");
+  // stampa indirizzo contenuto in a  
+  printf("--- contenuto di a: %p\n",a); 
 
-  // stampa indirizzi:
-  // printf("Indirizzi di argc, n, a, messi: %p\n%p\n%p\n%p\n",&argc,&n,&a,&messi);
   
   // riempio array
   for(int i=2; i<=n; i++) {
@@ -73,6 +77,7 @@ int main(int argc, char *argv[])
         a = realloc(a,capacita*sizeof(int));
         if(a==NULL)
           termina("Realloc fallita");
+        printf("--- a reallocato (%d): %p\n",capacita,a);
       }
       // inserisco il primo i dentro a[]
       a[messi] = i;
@@ -85,7 +90,7 @@ int main(int argc, char *argv[])
   a = realloc(a,capacita*sizeof(int));
   if(a==NULL) termina("Realloc fallita");
 
-  // apriamo il file per scriveci gli interi
+  // apriamo il file per scriverci gli interi
   FILE *f = fopen(argv[2],"at");
   if(f==NULL)
     termina("Apertura del file fallita");
