@@ -21,7 +21,16 @@ Scrittura di file in formato testo, funzioni fopen/fprintf/fclose. Programma `sc
 **Lezione 3** (23/9/25)
 
 Allocazione dinamica di array in C: funzioni malloc/free/realloc, programma `scrivi_primi.c`
-Utilizzo di *valgrind* per verificare il corretto utilizzo e deallocazione degli array
+Utilizzo di *valgrind* per verificare il corretto utilizzo e deallocazione degli array.
+Introduzione ai puntatori; uso di puntatori negli array.
+Significato e uso di `*` e `&`. Uso di `%p` per la stampa di un puntatore. 
+
+
+-------
+
+**Lezione 4** (26/9/25)
+
+Esempio passaggio parametri per riferimento attraverso un puntatore: `parametri.c` e `sommadprod.c`
 
 ------------
 

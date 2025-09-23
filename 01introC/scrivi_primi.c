@@ -59,6 +59,9 @@ int main(int argc, char *argv[])
   if(a==NULL) 
     termina("Malloc fallita");
 
+  // stampa indirizzi:
+  // printf("Indirizzi di argc, n, a, messi: %p\n%p\n%p\n%p\n",&argc,&n,&a,&messi);
+  
   // riempio array
   for(int i=2; i<=n; i++) {
     if(primo(i)) {
