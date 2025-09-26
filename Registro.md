@@ -30,8 +30,14 @@ Prototipi di funzione; significato istruzioni `#include`
 **Lezione 4** (26/9/25)
 
 Utilizzo di *valgrind* per verificare il corretto utilizzo e deallocazione degli array.
-Esempio passaggio parametri per riferimento attraverso un puntatore: `parametri.c` e `sommadprod.c`
+Esempio passaggio parametri per riferimento attraverso un puntatore: `sommadprod.c`
+Rappresentazione di stringhe in C: i tipi `char` e `char *`: `charstr.c` (inizio).
 
 
 ------------
 
+**Lezione 5** (30/9/25)
+
+Stampa di stringhe con `printf`, calcolo lunghezza con `strlen`. 
+Uso dei parametri argc/argv di main()
+Copia di un puntatore vs copia degli elementi di un array: la funzione strdup()

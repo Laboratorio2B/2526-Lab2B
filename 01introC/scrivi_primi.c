@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
   if(a==NULL) termina("Realloc fallita");
 
   // apriamo il file per scriverci gli interi
-  FILE *f = fopen(argv[2],"at");
+  FILE *f = fopen(argv[2],"wt");
   if(f==NULL)
     termina("Apertura del file fallita");
     
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
   }
   if(fclose(f)!=0)
     termina("Errore chiusura file");
-    
+
   // dealloco la memoria della tabella
   free(a);
   return 0;
