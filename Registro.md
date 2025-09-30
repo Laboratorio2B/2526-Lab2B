@@ -21,6 +21,7 @@ Terminazione in caso di errori: funzione perror().
 **Lezione 3** (23/9/25)
 
 Allocazione dinamica di array in C: funzioni malloc/free/realloc, programma `scrivi_primi.c`
+Scrittura in un file di testo: fopen(), fprintf(), fclose(). Modalità append.
 Introduzione ai puntatori; uso di puntatori negli array.
 Significato e uso di `*` e `&`. Uso di `%p` per la stampa di un puntatore. 
 Prototipi di funzione; significato istruzioni `#include`
@@ -31,13 +32,25 @@ Prototipi di funzione; significato istruzioni `#include`
 
 Utilizzo di *valgrind* per verificare il corretto utilizzo e deallocazione degli array.
 Esempio passaggio parametri per riferimento attraverso un puntatore: `sommadprod.c`
-Rappresentazione di stringhe in C: i tipi `char` e `char *`: `charstr.c` (inizio).
+Rappresentazione di stringhe in C (inizio): i tipi `char` e `char *`: sorgente `charstr.c`.
 
 
 ------------
 
 **Lezione 5** (30/9/25)
 
+Rappresentazione di stringhe in C (fine).
 Stampa di stringhe con `printf`, calcolo lunghezza con `strlen`. 
-Uso dei parametri argc/argv di main()
-Copia di un puntatore vs copia degli elementi di un array: la funzione strdup()
+Struttura dei parametri argc/argv di main().
+Copia del puntatore vs copia degli elementi di un array: la funzione strdup()
+Comandi `less` e `od` per visualizzare il contenuto di un file.
+
+
+------------
+
+**Lezione 6** (6/10/25)
+
+Passaggio di array dalle/alle funzioni.
+Introduzione al *makefile*; compilazione con il comando *make*.
+Lettura da un file di testo: comando fscanf().  
+Terminazione in caso di errori: funzione perror(). `stdout` e `stderr` e loro ridirezione.
