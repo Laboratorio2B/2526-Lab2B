@@ -21,9 +21,9 @@ void termina(char *messaggio);
 int *leggi_file(FILE *f, int *num_elementi)
 {
   assert(f!=NULL); // il file deve essere valido
-  int size=10; // dimensione attuale dell'array
+  int capacita=10; // dimensione attuale dell'array
   int messi=0; // numero di elementi attualmente nell'array
-  int *a = malloc(size*sizeof(int));
+  int *a = malloc(capacita*sizeof(int));
   if(a==NULL)
     termina("Memoria insufficiente");
     
@@ -33,20 +33,22 @@ int *leggi_file(FILE *f, int *num_elementi)
     if(e==EOF) break;
     if(e!=1) termina("Contenuto illegale nel file");
     // ho letto un intero dal file ed è stato messo in n
-    if(messi==size) {
+    // questa parte di reallocazione dell'array
+    // è la stessa che abbiamo già visto in scrivi_primi.c
+    if(messi==capacita) {
         // ingrandisco l'array
-        size = size*2;
-        a = realloc(a,size*sizeof(int));
+        capacita = capacita*2;
+        a = realloc(a,capacita*sizeof(int));
         if(a==NULL)
           termina("realloc fallita");
     }
-    assert(size>messi);
+    assert(capacita>messi);
     a[messi] = n;
     messi += 1;
   }
-  // ho messo tutti gli elementi che mi interessavano
-  size = messi;
-  a = realloc(a,size*sizeof(int));
+  // ho letto tutti gli elementi
+  capacita = messi;
+  a = realloc(a,capacita*sizeof(int));
   if(a==NULL)
     termina("realloc fallita");  
   // salvo il numero di elementi e restituisco l'array  

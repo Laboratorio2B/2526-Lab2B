@@ -53,5 +53,6 @@ Comandi `less` e `od` per visualizzare il contenuto di un file.
 Passaggio di array dalle/alle funzioni.
 Lettura da un file di testo: comando fscanf().  
 Terminazione in caso di errori: funzione perror(). `stdout` e `stderr` e loro ridirezione.
+Uso di `assert`.
 Introduzione al *makefile*; compilazione con il comando *make*.
 
