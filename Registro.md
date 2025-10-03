@@ -48,7 +48,7 @@ Comandi `less` e `od` per visualizzare il contenuto di un file.
 
 ------------
 
-**Lezione 6** (3/10/25)
+**Lezione 6** (7/10/25)
 
 Passaggio di array dalle/alle funzioni.
 Lettura da un file di testo: comando fscanf().  
