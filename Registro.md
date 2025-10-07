@@ -52,7 +52,10 @@ Comandi `less` e `od` per visualizzare il contenuto di un file.
 
 Passaggio di array dalle/alle funzioni.
 Lettura da un file di testo: comando fscanf().  
-Terminazione in caso di errori: funzione perror(). `stdout` e `stderr` e loro ridirezione.
+Terminazione in caso di errori: funzione perror(). Significato del tipo `const char *`
+`stdout` e `stderr` e loro ridirezione.
 Uso di `assert`.
 Introduzione al *makefile*; compilazione con il comando *make*.
-
+Equivalenza fra `*a` e `a[0]`.
+Equivalenza fra `a` e `&a[0]`.
+Aritmetica dei puntatori: definizione di `a+i` come `&a[i]`

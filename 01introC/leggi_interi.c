@@ -12,7 +12,7 @@
 //  alla funzione chiamante
 
 // prototipo della funzione termina()
-void termina(char *messaggio);
+void termina(const char *messaggio);
 
 
 // legge gli interi che sono nel file f
@@ -59,15 +59,18 @@ int *leggi_file(FILE *f, int *num_elementi)
 // visualizza elementi di un array di int su stdout 
 // stampa "Ho finito!" su stderr
 // Nota: fprintf(stdout,... è equivalente a printf(....) 
-void stampa_array(int *a, int n)
+void stampa_array(int a[], int n)
 {
+
+  // ----------------------- 
   assert(a!=NULL);
   assert(n>=0);
   // stampo il contenuto dell'array
   for(int i=0;i<n;i++)
     printf("%8d",a[i]); // stampo gli elementi in un campo di 8 caratteri
-  fprintf(stdout,"\nIn totale l'array contiene %d interi\n",n);// equivalente a fprintf
+  fprintf(stdout,"\nIn totale l'array contiene %d interi\n",n);// equivalente a printf
   fprintf(stderr,"Ho finito!\n");
+  return;
 }
 
 
@@ -90,6 +93,7 @@ int main(int argc, char *argv[])
 
   // stampo gli elementi dell'array
   stampa_array(a,n);
+
   free(a);
 
   // chiudi il file e termina 
@@ -100,7 +104,7 @@ int main(int argc, char *argv[])
 }
 
 // stampa un messaggio d'errore e termina il programma
-void termina(char *messaggio)
+void termina(const char *messaggio)
 {
   perror(messaggio);
   exit(1);
