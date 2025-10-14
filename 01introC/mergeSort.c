@@ -61,7 +61,7 @@ void merge(int a[], int na, int c[], int nc, int b[])
 }
 
 // funzione mergesort ricorsiva
-void mergesort(int *a, int n)
+void mergesort(int a[], int n) // al posto di a[] posso scrivere *a
 {
   assert(a!=NULL);
   assert(n>0);
