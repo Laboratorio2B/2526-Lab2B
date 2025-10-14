@@ -59,3 +59,12 @@ Introduzione al *makefile*; compilazione con il comando *make*.
 Equivalenza fra `*a` e `a[0]`.
 Equivalenza fra `a` e `&a[0]`.
 Aritmetica dei puntatori: definizione di `a+i` come `&a[i]`
+
+
+------------
+
+**Lezione 7** (14/10/25)
+
+Esempio di uso della notazione `&a[i]` nel *mergesort*
+Esercitazione in aula su array e stringhe. 
+
