@@ -76,11 +76,32 @@ Esercitazione in aula su array e stringhe: [testo esercizio](https://elearning.d
 
 Lettura di stringhe con `scanf`: evitare il buffer overflow: modificatori `%Ns` (con N massimo numero di caratteri) e `%ms`
 Costruzione/concatenazione di stringhe mediante `asprintf` 
+
+
+
+## Definizione di struct: liste e alberi binari di ricerca (02struct)
+
+
+
+**Lezione 8** (17/10/25)
+
 Definizione di tipi composti con `struct`; definizione di nuovi tipi con `typedef` e uso combinato con `struct`
 Operazioni sui tipi composti, notazioni `.` e  `->`; passaggio per valore e per riferimento di struct. 
 Ordinamento di un array di struct mediante mergesort
-
+Array di puntatori a struct, esempio: array di capitali.
 
 ----
+
+
+**Lezione 9** (21/10/25)
+
+Confronto lessicografico di stringhe, funzione `strcmp`.
+Ordinamento array di puntatori a struct mediante mergesort
+Introduzione all'uso delle funzioni come parametri di altre funzioni
+Mergesort con funzione di confronto passata come argomento
+Terminazione in caso di errori: funzione perror() e variabile globale `errno`
+
+
+
 
 

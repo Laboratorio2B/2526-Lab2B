@@ -160,3 +160,57 @@ Dato che non è possibile stabilire a priori quale sarà la lunghezza dell'array
 
 Si scriva poi un programma che invoca `somme_distinte` passandogli l'array ottenuto convertendo in interi i valori forniti sulla linea di comando e successivamente stampa su `stderr` l'array restituito da `somme_distinte`. Infine il programma deve stampare su `stdout` la somma dei valori contenuti nell'array restituito da `somme_distinte`. (Nota: per stampare su `stdout` si può usare `fprintf(stdout,...)` oppure semplicemente `printf`). Il programma deve deallocare tutta la memoria utilizzata (verificare con valgrind). 
 
+
+### Ribalta elenco (17/10/25)
+
+Scrivere un programma che invocato dalla linea di comando scrivendo
+
+    main infile outfile
+
+legge tutte le stringhe dal file di testo *infile* e le riscrive su *outfile* **in ordine inverso**. Ad esempio, se *infile* contiene
+```
+Mattarella
+Napolitano
+Ciampi
+Scalfaro
+Cossiga
+Pertini
+```
+il file *outfile* deve contenere
+```
+Pertini
+Cossiga
+Scalfaro
+Ciampi
+Napolitano
+Mattarella
+```
+Leggere le stringhe del file di input utilizzando `fscanf` for formato `%ms` in modo da non preoccuparvi della loro lunghezza. Dato però che non ci sono limitazioni al numero totale di stringhe, per poterle scrivere in ordine inverso dovete prima memorizzarle in un array di stringhe la cui dimensione deve aumentare dinamicamente. 
+
+Verificate con valgrind il corretto uso e deallocazione della memoria 
+
+
+
+### Ordina stringhe per lunghezza (17/10/25)
+
+Scrivere una funzione 
+```
+void mergesort(char *a[], int n)
+```
+ch dato un array `a[]` di  `n` stringhe le ordina in ordine di lunghezza crescente. *Suggerimento* si modifichi le funzioni mergesort/merge viste a lezione in `mergeSort.c`, osservando che c'è un'unica istruzione nella quale gli elementi di `a[]` vengono confrontati. Dato che vogliamo ordinare le stringhe per lunghezza, per confrontare `a[i]` e `c[j]`  il confronto deve essere fatto tra i valori `strlen(a[i])` e `strlen(c[j])`  
+
+Scrivere poi un programma `ostringhe` che ordina per lunghezza crescente gli elementi di `argv` e stampa le stringhe ordinate sul terminale. Ad esempio, scrivendo
+```
+ostringhe due ricorsione dieci casa Po
+```
+deve essere visualizzato l'elenco
+```
+Po
+due
+casa
+dieci
+ricorsione
+```
+
+Verificate con valgrind il corretto uso e deallocazione della memoria 
+
