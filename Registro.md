@@ -79,6 +79,7 @@ Costruzione/concatenazione di stringhe mediante `asprintf`
 
 
 
+
 ## Definizione di struct: liste e alberi binari di ricerca (02struct)
 
 
@@ -88,7 +89,7 @@ Costruzione/concatenazione di stringhe mediante `asprintf`
 Definizione di tipi composti con `struct`; definizione di nuovi tipi con `typedef` e uso combinato con `struct`
 Operazioni sui tipi composti, notazioni `.` e  `->`; passaggio per valore e per riferimento di struct. 
 Ordinamento di un array di struct mediante mergesort
-Array di puntatori a struct, esempio: array di capitali.
+Array di puntatori a struct vs array di struct. Esempio: array di capitali.
 
 ----
 
@@ -97,9 +98,8 @@ Array di puntatori a struct, esempio: array di capitali.
 
 Confronto lessicografico di stringhe, funzione `strcmp`.
 Ordinamento array di puntatori a struct mediante mergesort
-Introduzione all'uso delle funzioni come parametri di altre funzioni
-Mergesort con funzione di confronto passata come argomento
 Terminazione in caso di errori: funzione perror() e variabile globale `errno`
+Introduzione all'uso delle funzioni come parametri di altre funzioni
 
 
 

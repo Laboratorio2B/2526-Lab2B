@@ -156,7 +156,7 @@ void merge(capitale *a[], int na,
     // guardo se il nome di a[i] è minore del nome c[j]
     // ordinamento lessicografico per nome
     // if( strcmp(a[i]->nome,c[j]->nome)<0 ) { 
-    if( a[i]->lat  >=  c[j]->lat  ) { // ordinmento per lat decrescente 
+    if( a[i]->lat  >=  c[j]->lat  ) { // ordinamento per lat decrescente 
       b[k] = a[i];
       i++;
     } else {
