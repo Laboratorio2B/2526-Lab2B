@@ -155,8 +155,8 @@ void merge(capitale *a[], int na,
   while(i<na && j<nc) {
     // guardo se il nome di a[i] è minore del nome c[j]
     // ordinamento lessicografico per nome
-    // if( strcmp(a[i]->nome,c[j]->nome)<0 ) { 
-    if( a[i]->lat  >=  c[j]->lat  ) { // ordinamento per lat decrescente 
+    if( strcmp(a[i]->nome,c[j]->nome)<0 ) { 
+    // if( a[i]->lat  >=  c[j]->lat  ) { // ordinamento per lat decrescente 
       b[k] = a[i];
       i++;
     } else {
@@ -223,19 +223,18 @@ int main(int argc, char *argv[])
   }
   // legge i dati sulle capitali dal file 
   FILE *f = fopen(argv[1],"r");
+  if(f==NULL) termina("Apertura file fallita"); 
   int n;
   capitale **a = capitale_leggi_file(f, &n);
   fclose(f);
   
-  // ordino elenco capitali alfabeticamente
+  // ordino elenco capitali
   mergesort(a,n);
 
   // stampa elenco capitali
   for(int i=0;i<n;i++)
     capitale_stampa(a[i], stdout);
-
   puts("-------------");
-
 
   // dealloca le singole capitali e l'array
   for(int i=0;i<n;i++)

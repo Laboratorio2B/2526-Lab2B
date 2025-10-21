@@ -11,7 +11,7 @@ int applica(int x, int y, int (*f)(int, int));
 
 // funzioni somma e prodotto che prendono come 
 // input due interi e restituiscono un intero
-int somma(int a, int b) 
+int somma(int a, double b) 
 {
   return a+b;
 }
