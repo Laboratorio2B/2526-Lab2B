@@ -96,12 +96,25 @@ Array di puntatori a struct vs array di struct. Esempio: array di capitali.
 
 **Lezione 9** (21/10/25)
 
-Confronto lessicografico di stringhe, funzione `strcmp`.
-Ordinamento array di puntatori a struct mediante mergesort
+Ordinamento array di puntatori a struct mediante mergesort (`array_capitali.c`)
 Terminazione in caso di errori: funzione perror() e variabile globale `errno`
-Introduzione all'uso delle funzioni come parametri di altre funzioni
+Confronto lessicografico di stringhe: funzione `strcmp`.
+Introduzione all'uso delle funzioni come parametri di altre funzioni.
+Funzioni `fseek` e `ftell`. Uso del tipo `long`.
+Esercizio: ordinamento di file per dimensione e nome (`array_file.c`). 
 
 
+---
+
+**Lezione 10** (24/10/25)
 
 
+Puntatori generici (`void *`). La funzione di ordinamento di libreria `qsort`: tipo della funzione di confronto, casting.
+Introduzione alle *linked list*: creazione, stampa, distruzione di liste. Inserimento in testa e in coda. 
 
+
+---
+
+**Lezione 11** (28/10/25)
+
+Prova in itinere sui contenuti delle lezioni 1-9. 

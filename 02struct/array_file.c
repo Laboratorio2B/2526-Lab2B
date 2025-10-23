@@ -31,7 +31,7 @@ typedef struct {
   long lung; 
 } miofile;
 
-// crea oggetto capitale a partire dai suoi campi
+// crea oggetto miofile a partire dal suo nome
 miofile *miofile_crea(char *s)
 {
   assert(s!=NULL);
@@ -96,7 +96,6 @@ int main(int argc, char *argv[])
   // stampa array
   for(int i=0;i<n;i++)
     miofile_stampa(arr[i],stdout);
-
 
   puts("-------------");
 
