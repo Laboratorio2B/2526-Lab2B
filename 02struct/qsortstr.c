@@ -1,5 +1,5 @@
 /* *********************************************************
- * Esempio di uso di qsort per ordinare array di interi 
+ * Esempio di uso di qsort per ordinare array di stringhe 
  * ********************************************************* */
 #include <stdio.h>    // permette di usare scanf printf etc ...
 #include <stdlib.h>   // conversioni stringa/numero rand() abs() exit() etc ...
@@ -29,15 +29,14 @@ int main(int argc, char *argv[])
   }
   int n = argc-1; // Numero argomenti linea di comando
 
-  char **a = &argv[1];
+  char **a = &argv[1]; // a e' l'array a[0]=argv[1], a[1]=argv[2]
 
   // stampo array
   for(int i=0;i<n;i++)
     printf("%s ",a[i]);
   puts(""); // a capo 
 
-
-  // eseguo il sorting degli interi con qsort()
+  // eseguo il sorting delle stringhe con qsort()
   // come spiegato a lezione per non avere warning in compilazione
   // per l'ultimo argomento ci vuole il casting  
   qsort(a,n,sizeof(*a), (__compar_fn_t) &confronta_str); 

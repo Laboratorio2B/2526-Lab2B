@@ -7,9 +7,9 @@
 #include <assert.h>   // permette di usare la funzione assert
 #include <errno.h>    // richiesto per usare errno
 
+
 // stampa un messaggio di errore e termina
 void termina(const char *messaggio);
-
 
 // funzione di confronto, con i tipi corretti
 // necessita del casting al tipo __compar_fn_t
@@ -21,6 +21,24 @@ int confronta(int *a, int *b)
   else if(*a>*b) return 1;
   return 0; 
 }
+
+// funzione di confronto con i tipi richiesti da qsort
+// ma deve essere fatta una conversione a int * 
+// per effettuare la dereferenziazione e il
+// confronto degli interi. In questo caso il
+// casting alla chiamata del qsort non è necessario. 
+// Attenzione che se sbaglio la conversione
+// il compilatore non lo può rilevare (ad esempio
+// se scrivo `const double *a = aa`) 
+int vconfronta(const void *aa, const void *bb)
+{
+  const int *a = aa;
+  const int *b = bb;
+  if(*a<*b) return -1;
+  else if(*a>*b) return 1;
+  return 0; 
+}
+
 
 // funzione di confronto che ordina mettendo prima tutti i pari
 // e successivamente tutti i dispari  
@@ -46,7 +64,6 @@ int main(int argc, char *argv[])
     return 1;
   }
   int n = argc-1; // Numero argomenti linea di comando
-
   // alloco array dinamico
   int *a = malloc(n*sizeof(int));
   if(a==NULL) termina("Memoria insufficiente");
@@ -61,14 +78,14 @@ int main(int argc, char *argv[])
 
   // eseguo il sorting degli interi con qsort()
   // come spiegato a lezione per l'ultimo argomento ci vuole il casting  
-  qsort(a,n,sizeof(*a), (__compar_fn_t) &argc); 
+  qsort(a,n,sizeof(*a), &vconfronta); 
 
   // stampo array
   puts("--- qsort 1 eseguito ---");
   for(int i=0;i<n;i++) printf("%d ",a[i]);
   puts(""); // a capo 
 
-  qsort(a,n,sizeof(*a), (__compar_fn_t) &confronta); 
+  qsort(a,n,sizeof(*a), (__compar_fn_t) &confrontapd); 
   // stampo array
   puts("--- qsort 2 eseguito ---");
   for(int i=0;i<n;i++) printf("%d ",a[i]);
