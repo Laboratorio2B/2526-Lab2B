@@ -48,7 +48,7 @@ typedef struct duetto {
 // nel seguito li useremo entrambi, nella pratica si usa la versione corta "coppia"
 
 // prototipo della funzione mergesort per
-// orinare un array di coppie
+// ordinare un array di coppie
 void mergesort(coppia a[], int n);
 
 

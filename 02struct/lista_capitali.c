@@ -144,6 +144,14 @@ capitale *cancella_nome(capitale *testa, char *s)
   return testa;
 }
 
+// crea una lista con gli oggetti capitale letti da 
+// *f inserendoli per latitudini descrescente
+capitale *crea_lista_lat(FILE *f);
+
+// inserisce capitale "c" in lista "testa" 
+// mantenendo ordinamento per latitudine decrescente
+capitale *inserisci_lat_ric(capitale *testa, capitale *c);
+
 
 int main(int argc, char *argv[])
 {

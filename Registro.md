@@ -123,3 +123,13 @@ Prova in itinere sui contenuti delle lezioni 1-9.
 **Lezione 12** (31/10/25)
 
 Introduzione alle *linked list*: creazione, stampa, distruzione di liste. Inserimento in testa e in coda. 
+Linked list: procedure ricorsive per la cancellazione e l'inserimento ordinato. 
+
+
+
+----
+
+**Lezione 13** (4/11/25)
+
+Alberi binari di ricerca: procedure ricorsive per costruzione, visita e deallocazione.
+Alberi binari di ricerca: visita in preorder, ricerca di un elemento, calcolo altezza (file `abr_capitali.c`)
