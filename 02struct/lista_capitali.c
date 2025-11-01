@@ -33,6 +33,7 @@ void capitale_stampa(const capitale *a, FILE *f) {
 capitale *capitale_crea(char *s, double lat, double lon)
 {
   capitale *a  = malloc(sizeof(*a));
+  if(a==NULL) termina("Allocazione capitale fallita");
   a->lat = lat;
   a->lon = lon;
   a->nome = strdup(s); // creo una copia di s e l'assegno al nome
@@ -49,7 +50,6 @@ void capitale_distruggi(capitale *a)
 // stampa tutti gli elementi della lista lis
 void lista_capitale_stampa(const capitale *lis, FILE *f)
 {
-  // capitale *p = lis;  // se ne puo' fare a meno
   while(lis!=NULL) {
     capitale_stampa(lis,f);
     lis = lis->next;
@@ -57,7 +57,7 @@ void lista_capitale_stampa(const capitale *lis, FILE *f)
   return;
 }
 
-// distrugge tutti gli elementi della lista lis
+// distrugge (dealloca) tutti gli elementi della lista lis
 void lista_capitale_distruggi(capitale *lis)
 {
   while(lis!=NULL) {
@@ -121,13 +121,13 @@ capitale *crea_lista_coda(FILE *f) {
       coda->next = b;
       coda = b;
     }
-    coda->next=NULL;  
+    coda->next=NULL;
   }
   return testa;
 }
 
 
-// cancella da una lista l'elemento con nome "s"
+// cancella da una lista l'elemento con nome "s" versione ricorsiva
 capitale *cancella_nome(capitale *testa, char *s)
 {
   assert(s!=NULL);
@@ -144,13 +144,81 @@ capitale *cancella_nome(capitale *testa, char *s)
   return testa;
 }
 
-// crea una lista con gli oggetti capitale letti da 
-// *f inserendoli per latitudini descrescente
-capitale *crea_lista_lat(FILE *f);
+// cancella da una lista l'elemento con nome "s" 
+// bozza versione iterativa; non funzionante!
+// da completare per casa
+capitale *cancella_nome_iter(capitale *lis, char *s)
+{
+  while(lis!=NULL) {
+    if(strcmp(lis->nome,s)==0) {
+      // qui è necessario eliminare dalla lista
+      // l'oggetto a cui punta lis 
+    }
+    lis = lis->next;
+  }
+  // ora è necessario restituire il puntatore al 
+  // primo elemento della nuova lista: è cambiato
+  // se l'elemento che era testa è stato cancellato
+  return NULL; // NULL è sicuramente sbagliato... 
+}
+
 
 // inserisce capitale "c" in lista "testa" 
 // mantenendo ordinamento per latitudine decrescente
-capitale *inserisci_lat_ric(capitale *testa, capitale *c);
+capitale *inserisci_lat_ric(capitale *testa, capitale *c)
+{
+  assert(c!=NULL);
+  // base riscorsione, lista vuota
+  if(testa==NULL) {
+    c->next=NULL;
+    return c; //  la nuova lista contiene solo c
+  }
+  // la lista non è vuota
+  if(c->lat > testa->lat) {
+    // inserisco c in cima
+    c->next = testa;
+    return c;
+  }
+  else { // c va inserito "in mezzo" alla lista  
+    testa->next = inserisci_lat_ric(testa->next,c);
+    return testa;
+  }
+}
+
+
+// inserisce capitale "c" in lista "testa" 
+// mantenendo ordinamento per latitudine decrescente
+// bozza versione iterativa: non funzionante
+// da completare per casa
+capitale *inserisci_lat_iter(capitale *testa, capitale *c)
+{
+  assert(c!=NULL);
+  capitale *p = testa;
+  while(p!=NULL) {
+    // l'elemento c deve essere inserito dopo quelli
+    // che hanno latitudine maggiore di c->lat e
+    // prima di quelli che hanno latitudine minore di c->lat
+  }    
+  // ora bisogna restituire la testa della nuova lista
+  // è cambiata se c è stato messo in cima alla lista
+  return NULL; // NULL è sicuramente sbagliato
+}
+
+
+// crea una lista con gli oggetti capitale letti da 
+// *f inserendoli per latitudini descrescente
+capitale *crea_lista_lat(FILE *f)
+{
+  // costruzione lista leggendo capitali dal file
+  capitale *testa=NULL;
+  while(true) {
+    capitale *b = capitale_leggi(f);
+    if(b==NULL) break;
+    // inserisco b in testa alla lista    
+    testa = inserisci_lat_ric(testa,b);
+  }
+  return testa;
+}
 
 
 int main(int argc, char *argv[])
@@ -162,9 +230,9 @@ int main(int argc, char *argv[])
   FILE *f = fopen(argv[1],"r");
   if(f==NULL) termina("Errore apertura file");
 
-  // costruzione lista leggendo capitali dal file
+  // costruzione lista leggendo capitali dal file e inserendo in testa
   capitale *testa=crea_lista_testa(f);
-  puts("--- inizio lista ---");
+  puts("--- inizio lista (inserimento in testa) ---");
   // stampa lista capitali appena creata
   lista_capitale_stampa(testa,stdout);  
   puts("--- fine lista ---");
@@ -173,17 +241,26 @@ int main(int argc, char *argv[])
   // costruzione lista inserendo in coda
   rewind(f); // riavvolge il file
   testa=crea_lista_coda(f);
-  puts("--- inizio lista ---");
-  // stampa lista capitali appena creata
+  puts("--- inizio lista (inserimento in coda) ---");
+  // stampa lista capitali appena ri-creata
   lista_capitale_stampa(testa,stdout);  
   puts("--- fine lista ---");
 
   // elimina Londra dalla lista
   testa = cancella_nome(testa,"Londra");
-  puts("--- inizio lista ---");
+  puts("--- inizio lista (con Londra cancellata) ---");
   lista_capitale_stampa(testa,stdout);  
   puts("--- fine lista ---");
-
+  lista_capitale_distruggi(testa);
+  
+  // costruzione lista inserendo per latitudine decrescente
+  rewind(f); // riavvolge il file
+  testa=crea_lista_lat(f);
+  puts("--- inizio lista (inserimento per latitudine) ---");
+  // stampa lista capitali appena ri-creata
+  lista_capitale_stampa(testa,stdout);  
+  puts("--- fine lista ---");
+  
   if(fclose(f)==EOF)
     termina("Errore chiusura");
   // dealloca la memoria usata dalla lista 

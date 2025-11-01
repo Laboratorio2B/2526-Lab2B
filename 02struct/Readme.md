@@ -27,6 +27,17 @@ Questo esercizio è stato svolto in aula nel file `array_file.c` esclusa la part
 potete svolgere modificando opportunamente il mergesort visto in `array_capitali_funz.c`
 
 
+
+### Inserimento e cancellazione da liste non ricorsivo (31/10/25)
+
+All'interno del file `capitali_lista` completare le funzioni `cancella_nome_iter` e `inserisci_lat_iter`
+che effettuano la cancellazione e l'inserimento ordinato in una lista utilizzando un ciclo `while`
+invece della ricorsione. Per testare le vostre funzioni invocate `inserisci_lat_iter` in `crea_lista_lat` e 
+`cancella_nome_iter` dal `main` al posto di `cancella_nome` (provate ad effettuare più di una 
+cancellazione e in particolare provate a cancellare anche il primo elemento della lista). 
+
+
+
 ### Liste di interi (31/10/25)
 
 Utilizzare la struct
