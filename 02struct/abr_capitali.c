@@ -113,6 +113,7 @@ capitale *capitale_leggi(FILE *f)
 // sul nome della capitale
 capitale *abr_inserisci(capitale *root, capitale *c)
 {
+  assert(c!=NULL);
   c->left=c->right=NULL;
   // caso base albero vuoto
   if(root==NULL) 
@@ -203,12 +204,15 @@ int main(int argc, char *argv[])
   capitale *root=crea_abr(f);
   if(fclose(f)==EOF)
     termina("Errore chiusura");
-  puts("--- inizio lista ---");
+  puts("--- inizio lista (alfabetica) ---");
   // stampa elenco capitali dall'abr creato
   abr_capitale_stampa(root,stdout);  
-  // abr_capitale_stampa_preorder(root,stdout,0);  
+  puts("--- fine lista ---");
+  puts("--- inizio lista (struttura dell'albero) ---");
+  abr_capitale_stampa_preorder(root,stdout,0);  
   puts("--- fine lista ---");
   printf("Altezza albero: %d\n",abr_altezza(root));
+  // esegue la ricerca delle città passate sulla linea di comando
   for(int i=2;i<argc;i++) {
     capitale *c = abr_ricerca(root,argv[i]);
     if(c==NULL) 
@@ -219,8 +223,8 @@ int main(int argc, char *argv[])
     }
   }
   // stampa condizionale
-  // puts("--- elenco città con latitudine in [40,43] ---");
-  // abr_stampa_cond(root,stdout,&latrange);
+  puts("--- elenco città con latitudine in [40,43] ---");
+  abr_stampa_cond(root,stdout,&latrange);
   
   abr_capitale_distruggi(root);
 

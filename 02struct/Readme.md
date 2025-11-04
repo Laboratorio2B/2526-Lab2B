@@ -64,3 +64,27 @@ Successivamente il `main` deve invocare `confronta_lunghezza` e stampare la list
 
 Il programma deve poi deallocare tutta la memoria utilizzata e terminare.   
 
+
+
+### Stampa condizionale su ABR (4/11/25)
+
+
+Aggiungere al programma  `abr_capitali` una funzione
+```
+bool pisaSE(capitale *c)
+
+```
+che prende input una capitale `c` e restituisce `true` se e solo se la città `c` si trova a Sud-Est di Pisa (che ha coordinate `43.70853`, `10.4036`). Utilizzare tale funzione insieme a `abr_stampa_cond` per stampare su `stdout` l'elenco delle capitali che si trovano a Sud-Est di Pisa. 
+
+
+### Ricerca su ABR (4/11/25)
+
+Aggiungere al programma `abr_capitali` una funzione
+```
+int abr_ricerca_range(capitale *r, char *smin, char *smax)
+```
+che date due stringhe `smin` e `smax` visualizza su stdout tutte le città contenuto nell'albero di radice `r` il cui nome è compreso lessicograficamente tra `smin` e `smax`. La funzione deve visualizzare le città in 
+ordine lessicografico e deve esplorare solamente le parti dell'albero che possono contenere città nel range assegnato. La funzione deve resituire il numero di nodi esplorati (cioè quelli il cui nome di città viene confrontato con `smin` e/o `smax`); questo serve per verificare che non venga visitato tutto l'abero.
+
+Modificare poi la funzione `main` in modo che dopo la costruzione dell'albero venga invocata la funzione 
+`abr_ricerca_range` con parametri `argv[2]` e `argv[3]`.   

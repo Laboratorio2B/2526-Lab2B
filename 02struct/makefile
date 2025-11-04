@@ -9,7 +9,13 @@ CC=gcc
 CFLAGS=-std=c11 -Wall -O -g
 LDLIBS=-lm
 
+# regola per creare l'eseguibile ABR_esempio
+# compilando abr_capitali.c
+ABR_esempio: abr_capitali.c
+	$(CC) $(CFLAGS) -o ABR_esempio abr_capitali.c
 
 
-zip:
+# quando eseguo `make zippo` viene eseguito 
+# il comando e creato l'archivio 02struct.zip
+zippo:
 	zip 02struct.zip *.c
