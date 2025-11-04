@@ -9,3 +9,7 @@ CC=gcc
 CFLAGS=-std=c11 -Wall -O -g
 LDLIBS=-lm
 
+
+
+zip:
+	zip 02struct.zip *.c
