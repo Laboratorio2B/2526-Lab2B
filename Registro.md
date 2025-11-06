@@ -134,3 +134,11 @@ Linked list: procedure ricorsive per la cancellazione e l'inserimento ordinato.
 Alberi binari di ricerca: procedure ricorsive per costruzione, visita e deallocazione.
 Alberi binari di ricerca: visita in preorder, ricerca di un elemento, calcolo altezza (file `abr_capitali.c`)
 Makefile: concetto di target, prerequisiti e comandi.
+
+
+**Lezione 14** (7/11/25)
+
+Lettura da file con getline(). Parsing di stringhe mediante strtok() (esempi `leggicitta.c` e leggi nomi).
+Variabili statiche. Funzionamento interno di strtok(). 
+Makefile: target di default, meccanismo di risoluzione dei prerequisiti, regole implicite
+

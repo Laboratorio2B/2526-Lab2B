@@ -9,6 +9,16 @@ CC=gcc
 CFLAGS=-std=c11 -Wall -O -g
 LDLIBS=-lm
 
+EXECS=leggicitta legginomi
+
+
+# se non viene specificato un target dalla linea
+# di comando, make esegue il primo del makefile
+# in questo caso si chiama `all` e dipende dai
+# file specificati in EXECS
+all: $(EXECS)
+
+
 # regola per creare l'eseguibile ABR_esempio
 # compilando abr_capitali.c
 ABR_esempio: abr_capitali.c
