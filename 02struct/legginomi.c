@@ -2,9 +2,9 @@
 #include <stdio.h>    // permette di usare scanf printf etc ...
 #include <stdlib.h>   // conversioni stringa exit() etc ...
 #include <stdbool.h>  // gestisce tipo bool
-#include <assert.h>   // permette di usare la funzione ass
+#include <assert.h>   // permette di usare la funzione assert
 #include <string.h>   // funzioni per stringhe
-#include <errno.h>    // richiesto per usare errno
+#include <errno.h>    // richiesto per usare errno dentro termina()
 
 
 // Scopo del programma:
@@ -55,7 +55,9 @@ int main(int argc, char *argv[])
     // esegue la tokenizzazione di buffer: legge primo token 
     char *s = strtok(buffer,";\n");
     while(s!=NULL) {
-      printf("Letto: <%s>\n",s);
+      s = elimina_spazi_testa(s);   // elimina eventuali spazi in testa 
+      if(strlen(s)>0)               // stampa se la stringa non è vuota
+        printf("Letto: <%s>\n",s);
       // legge il prossimo token
       s = strtok(NULL,";\n");
     }

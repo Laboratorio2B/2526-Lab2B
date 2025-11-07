@@ -10,8 +10,8 @@ void termina(const char *messaggio);
 
 
 // Scopo del programma:
-// mostrare il funzionamento di getline() e strtok() 
-// eseguire passando come argomento sudAmerica.txt
+//   mostrare il funzionamento di getline() e strtok() 
+//   eseguire passando come argomento il file sudAmerica.txt
 
 
 // main che legge le linee e le spezza al ;

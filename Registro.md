@@ -136,9 +136,10 @@ Alberi binari di ricerca: visita in preorder, ricerca di un elemento, calcolo al
 Makefile: concetto di target, prerequisiti e comandi.
 
 
+
 **Lezione 14** (7/11/25)
 
-Lettura da file con getline(). Parsing di stringhe mediante strtok() (esempi `leggicitta.c` e leggi nomi).
-Variabili statiche. Funzionamento interno di strtok(). 
+Lettura da file con getline(). Parsing di stringhe mediante strtok() (esempi `leggicitta.c` e `legginomi.c`).
+Funzionamento interno di strtok(). Varabili statiche (esempio `statiche.c`)
 Makefile: target di default, meccanismo di risoluzione dei prerequisiti, regole implicite
 
