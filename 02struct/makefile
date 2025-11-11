@@ -29,9 +29,9 @@ legginomi: legginomi.c
 	$(CC) -std=c99 -Wall -O2 -o legginomi legginomi.c
 
 # regola per creare l'eseguibile ABR_esempio
-# compilando abr_capitali.c
+# compilando abr_capitali.c (senza -O per usare il debugger)
 ABR_esempio: abr_capitali.c
-	$(CC) $(CFLAGS) -o ABR_esempio abr_capitali.c
+	$(CC) -std=c11 -Wall -g -o ABR_esempio abr_capitali.c
 
 
 # quando eseguo `make zippo` viene eseguito 
