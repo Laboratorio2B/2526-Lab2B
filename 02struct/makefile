@@ -9,7 +9,7 @@ CC=gcc
 CFLAGS=-std=c11 -Wall -O -g
 LDLIBS=-lm
 
-EXECS=leggicitta legginomi statiche
+EXECS=leggicitta legginomi statiche parole
 
 # se non viene specificato un target dalla linea
 # di comando, make esegue il primo del makefile
@@ -18,6 +18,17 @@ EXECS=leggicitta legginomi statiche
 # esistono già diventano a loro volta target
 # da realizzare
 all: $(EXECS)
+
+
+# regole per ottenere l'eseguibile parole da parole.c e strint.c
+parole: parole.o strint.o
+	$(CC) parole.o strint.o $(LDLIBS) -o parole
+	
+parole.o: parole.c strint.h
+	$(CC) parole.c $(CFLAGS) -c -o parole.o
+	
+strint.o: strint.c strint.h
+	$(CC) strint.c $(CFLAGS) -c -o strint.o
 
 
 # regola esplicta per legginomi: ha la precedenza
