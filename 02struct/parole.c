@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
   puts("--- inizio visita in-order---");
   abr_strint_stampa_preorder(root,stdout,0);
-  puts("--- fine visita ---");
+  puts("--- fine visita e programma ---");
 
   abr_strint_distruggi(root);
 

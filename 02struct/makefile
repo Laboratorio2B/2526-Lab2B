@@ -30,6 +30,9 @@ parole.o: parole.c strint.h
 strint.o: strint.c strint.h
 	$(CC) strint.c $(CFLAGS) -c -o strint.o
 
+#%.o: %.c %.h
+#	$(CC) $< $(CFLAGS) -O2 -c -o $@
+
 
 # regola esplicta per legginomi: ha la precedenza
 # sulla regola implicita che dice come ottenere 
@@ -45,7 +48,11 @@ ABR_esempio: abr_capitali.c
 	$(CC) -std=c11 -Wall -g -o ABR_esempio abr_capitali.c
 
 
+# regola per cancellare gli eseguibili e i file oggetto.
+clean:
+	rm -f *.o $(EXECS)
+
 # quando eseguo `make zippo` viene eseguito 
 # il comando e creato l'archivio 02struct.zip
 zippo:
-	zip 02struct.zip *.c
+	zip 02struct.zip *.c *.h makefile

@@ -5,21 +5,16 @@
 #include <assert.h>   // permette di usare la funzione assert
 #include <string.h>   // funzioni di confronto/copia/etc di stringhe
 
-// le istruzioni qui sopra le spieghiamo più avanti 
+// emulazione della funzione strtok in assembler
+char *miatok(char *s, int delim);
 
-void termina(char *messaggio)
+void termina(const char *messaggio)
 {
   puts(messaggio);
   exit(1);
 }
 
-
-// emulazione della funzione strtok in assembler
-char *miatok(char *s, int delim);
-
-
-
-// lconcatena argomenti passati sulal linea di comando
+// Tokenizza la stringa argv[1] passandola a miatok 
 int main(int argc, char *argv[])
 {
   if(argc==2) {

@@ -161,6 +161,8 @@ Accesso a sistemi remoti via ssh con X11 forwarding. Uso di gdbgui per debugging
 **Lezione 16** (14/11/25)
 
 File oggetto (`.o`) e compilazione separata (programma `parole`) 
+Realizzazione della compilazione seprata nel makefile. Utilizzo delel variabili 
+`$<`, `$^`, e `$@` nel makefile.
 Implementazione `strtok` in assembler ARM (`tok.s`)
 
 
