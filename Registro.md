@@ -161,10 +161,20 @@ Accesso a sistemi remoti via ssh con X11 forwarding. Uso di gdbgui per debugging
 **Lezione 16** (14/11/25)
 
 File oggetto (`.o`) e compilazione separata (programma `parole`) 
-Realizzazione della compilazione seprata nel makefile. Utilizzo delel variabili 
+Realizzazione della compilazione separata nel makefile. Utilizzo delel variabili 
 `$<`, `$^`, e `$@` nel makefile.
 Implementazione `strtok` in assembler ARM (`tok.s`)
 
 
 ---
 
+**Lezione 17** (18/11/25)
+
+Implementazione quicksort in C e in assembler (`quicksort.c`, `quicksort.s` e `quicksort2.s`)
+e misura dei tempi di esecuzione con `times(3)` .
+Concetto di compilazione condizionale con `#ifdef` e suo controllo attraverso il makefile.
+Operazioni bitwise in C: `&`, `|`, `^`, `~`, `<<`, `>>`. 
+Uso di variabili intere come array di bit. Esempi in `bitops.c` (non commentati a lezione).
+
+
+-----
