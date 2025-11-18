@@ -13,15 +13,23 @@ static void termina(const char *messaggio);
 
 
 #if 0
-&& ||   And e Or logici
+Richiamo operatori logici:
+  && ||   And e Or logici
+usati per conettere due condizioni nei test (if/while/for etc)
 
+Esempio:
 a=2
 b=9 
-a && b -> true
+a && b -> true in quanto i valori !=0 sono cinsiderati true
 
+Esistono gli stessi operatori in versione "bitwise"
 
------
-& | ^ bitwise   operazioni tra i bit degli interi 
+& | ^ bitwise: and, or, xor bitwise
+
+sono simili alle operazioni aritmetiche:
+per calcolare il risultato bisogna considerare 
+la rappresentazione binaria degli operandi ed 
+eseguire le operazioni logiche singolarimente bit a bit:
 
 a =00000011 
 b =00001001
@@ -33,16 +41,23 @@ a^b => 00001010
 esiste anche il ~ (not bitwise)
 ~a = 11111100
 
-
-<< shift sin
->> shift dex
+osserviamo che se 
+a=2 e b=9, mentre 
+  a && b = true
+abbiamo
+  a & b = 0
+  
+Gli operatori bitwise sono spesso usati insieme a:
+  << shift sin
+  >> shift dex
+Esempi:
 
 b = 00001001
+c = b<<3 risulta uguale a 01001000 (equivalenmte a moltiplicare per 2**3 = 8)
+mentre:
+  c>>2 risulta uguale a 00010010
 
-c = b<<3 -> 01001000
-c>>2 -> 00010010
-
-In C lo shift destro può essere aritmetico o logico
+Importante: in C lo shift destro può essere aritmetico o logico
 il comportamento è implementation dependent
 d = 110000....1
 d>>2
@@ -50,7 +65,13 @@ d>>2
   ma anche          1111000000
 e = 001000....1 (il bit più significativo è 0)
 e>>2 ottengo sempre 00001000...
+
+per questo motivo lo shift destro deve essere usato con molta attenzione
 #endif
+
+
+// il seguente programma mostra esempi di uso degli operatori bitwise 
+// combinati con lo shift
 
 
 // converte il primo intero passato sulla linea di comando in binario
@@ -64,6 +85,8 @@ int main(int argc, char *argv[])
   }
   int n = atoi(argv[1]);
 
+  // conversione intero -> stringa binaria
+  // converte ogni bit di n nei caratteri '1' o '0'
   for(int i=31;i>=0;i--) {
     int mask = 1<<i;
     char c = ( (n&mask) !=0  ) ? '1' : '0';
@@ -71,13 +94,14 @@ int main(int argc, char *argv[])
   }
   puts("");
   
-  // convertiamo argv[2] in intero
-  // argv[2] = 100011
-  n = 0;
+  // conversione stringa binaria argv[2] in intero
+  // esempio argv[2] = "100011"
   if(strlen(argv[2])>31)
     termina("Stringa in input troppo lunga");
+  n = 0;
   for(int i=0;i<strlen(argv[2]);i++) {
     if(argv[2][i]=='1') {
+      // se trovo un '1' vado a settare il bit ccrrispondente
       int mask = 1 << ( strlen(argv[2])-i-1  );
       n = n | mask;
     }
