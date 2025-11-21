@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
 // stampa i valori di una matrice rxc
 // allocata come variabile statica 
-void stampa_matrice(int r, int c, int q[][c] , FILE *f)
+void stampa_matrice(int r, int c, int q[][c], FILE *f)
 {
   for(int i=0;i<r;i++) {
     for(int j=0;j<c;j++)

@@ -9,7 +9,7 @@ CC=gcc
 CFLAGS=-std=c11 -Wall -O -g
 LDLIBS=-lm
 
-EXECS=leggicitta legginomi statiche parole bitops
+EXECS=leggicitta legginomi statiche parole bitops matrice
 
 # se non viene specificato un target dalla linea
 # di comando, make esegue il primo del makefile

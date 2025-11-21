@@ -186,7 +186,7 @@ Uso di variabili intere come array di bit. Esempi in `bitops.c` (non commentati 
 
 Definizione e uso di matrici bidimensionali definite in modo statico (ad esempio `int a[3][5]`) e in modo dinamico come array di righe.
 
-Introduzione a Java: la classe `Coppia`, overloading dei metodi `toString` e  `equals`, la classe `ArrayList<>`, metodi `sort` e `contains`.
+Introduzione a Java: la classe `Coppia`, la classe `ArrayList<>`, metodi `sort` e `contains`.
 
 
 -----

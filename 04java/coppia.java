@@ -20,6 +20,13 @@ class Coppia {
     return String.format("(%d,%d)",x,y);
   }
 
+  // primo tentativo di definire il metodo equals
+  // ma non sarà sufficiente
+  public boolean equals(Coppia c) {
+    return (x == c.x) && (y == c.y);
+  }
+
+
   // metodo main: crea coppie con i dati dalla linea di comando e le ordina
   public static void main(String[] args) {
     // controlla che ci siano almeno due argomenti e che siano pari
@@ -38,7 +45,8 @@ class Coppia {
     lista.add(new Coppia()); // aggiunge una coppia 0,0
 
     // ordina la lista per differenza di elementi crescente
-    lista.sort((c1,c2) -> Math.abs(c1.x-c1.y) - Math.abs(c2.x-c2.y));
+    lista.sort((c1,c2) -> 
+      Math.abs(c1.x-c1.y) - Math.abs(c2.x-c2.y));
 
     // esempio più complesso che ordina per differenza crescente
     // e a parità di differenza, ordina per x decrescente
@@ -57,6 +65,7 @@ class Coppia {
 
     // test del metodo contains: invoca equals di Coppia
     Coppia c = new Coppia(2, 3);
-    System.out.println("c=" + c + " è in lista? " + lista.contains(c));
+    System.out.println("c=" + c + " è in lista? " 
+       + lista.contains(c));
   }
 }
