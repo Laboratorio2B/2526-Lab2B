@@ -16,6 +16,7 @@ class Coppia {
 
   // crea stringa che rappresenta la coppia
   // viene invocato ad esempio da println
+  @Override
   public String toString() {
     return String.format("(%d,%d)",x,y);
   }
@@ -23,6 +24,18 @@ class Coppia {
   // primo tentativo di definire il metodo equals
   // ma non sarà sufficiente
   public boolean equals(Coppia c) {
+    Coppia c = (Coppia) o; 
+    return (x == c.x) && (y == c.y);
+  }
+  
+  
+  // per far funzionare contains correttamente
+  // devo fare l'override del metodo equals(Object o)
+  @Override
+  public boolean equals(Object o) {
+    if(o == null || !(o instanceof Coppia))
+      return false;
+    Coppia c = (Coppia) o;      // casting simile a quello del C
     return (x == c.x) && (y == c.y);
   }
 

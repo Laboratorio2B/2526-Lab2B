@@ -185,8 +185,25 @@ Uso di variabili intere come array di bit. Esempi in `bitops.c` (non commentati 
 
 
 Definizione e uso di matrici bidimensionali definite in modo statico (ad esempio `int a[3][5]`) e in modo dinamico come array di righe.
-
 Introduzione a Java: la classe `Coppia`, la classe `ArrayList<>`, metodi `sort` e `contains`.
 
+
+-----
+
+**Lezione 19** (25/11/25)
+
+
+Java: overloading vs overriding. Overriding dei metodi `toString` e  `equals`. Uso dell'annotazione `@Override`
+La classe `TreeSet` e l'interfaccia `Comparable`. Lettura da file con `BufferedReader` e `FileReader`.
+Uso di eccezioni. Java: la classe `HashSet` e il metodo `hashCode` (sorgente `Citta.java`).
+
+-----
+
+**Lezione 20** (28/11/25)
+
+Cenni sulla gerarchia delle collezioni: `Set` vs `HashSet` vs 'LinkedHashSet', `List` vs `ArrayList` vs `LinkedList`.
+Java: classi (astratte) e interfacce; differenza di uso fra `extends` e `implements`.
+Classe `Grafo`, cammini minimi con algoritmo di Dijkstra. Classe `LogGrafo` 
+e implementazione di un grafo di città mediante l'interfaccia `Nodo` 
 
 -----
