@@ -11,3 +11,14 @@ java GrafoCitta italiane.txt 90
 ```
 in questo caso i parametri "italiane.txt" e "90" sono memorizzati nell'array di stringhe `args` argomento di `main`. Si noti che in questo esempio `args` avrebbe due elementi, non 3 come in C.
 
+
+## Esercizi
+
+
+### Città del Sud America (28/11/25)
+
+Scrivere un programma Java che legge le città dal file `02struct/sudAmerica.txt` e le stampa ordinate per nazione e all'interno di ogni nazione ordinate per nome della città. Inoltre si deve stampare per ogni nazione la somma delle popolazioni delle città di quella nazione. 
+
+
+
+

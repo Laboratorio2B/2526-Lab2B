@@ -24,7 +24,6 @@ class Coppia {
   // primo tentativo di definire il metodo equals
   // ma non sarà sufficiente
   public boolean equals(Coppia c) {
-    Coppia c = (Coppia) o; 
     return (x == c.x) && (y == c.y);
   }
   

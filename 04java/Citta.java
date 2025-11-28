@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Citta {
+public class Citta implements Nodo {
   String nome;
   double lat, lon; // latitudine e longitudine
   int popolazione; // popolazione in migliaia
@@ -60,7 +60,14 @@ public class Citta {
     return hash;
   }
 
+  // funzioni che servono per usare le città come nodo di un grafo
+  // implementando l'interfaccia Nodo
+  public int compareTo(Citta c) {
+    return nome.compareTo(c.nome);}
 
+  public String etichetta() {return  nome;}
+
+  // ---- main per testare la classe
   public static void main(String[] args) {
     if(args.length !=1) {
       System.out.println("Uso: java Citta nomefile");
