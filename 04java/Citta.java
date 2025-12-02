@@ -74,7 +74,7 @@ public class Citta implements Nodo {
       System.exit(1);
     }
     // creazione insieme di città 
-    Set<Citta> insieme = new HashSet<Citta>();
+    Set<Citta> insieme = new LinkedHashSet<Citta>();
     try {
       BufferedReader br = new BufferedReader(new FileReader(args[0]));
       String linea;

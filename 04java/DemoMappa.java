@@ -1,4 +1,5 @@
-import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.LinkedHashMap;
 
 class DemoMappa {
@@ -13,7 +14,7 @@ class DemoMappa {
 
     // crea una mappa che conta il numero di occorrenze
     // di ogni stringa passata come argomento
-    HashMap<String, Integer> mappa = new LinkedHashMap<String, Integer>();
+    Map<String, Integer> mappa = new TreeMap<String,Integer>();
     for(String s: args) {
       mappa.put(s, 1 + mappa.getOrDefault(s, 0));
     }

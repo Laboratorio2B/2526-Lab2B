@@ -14,7 +14,7 @@ import java.util.TreeSet;
  * Il main() legge da file una lista di terne
  * e stampa quelle che sono pitagoriche
  * La stampa è fatta scorrendo il TreeSet
- * quindi le terne vendono visitate in ordine
+ * quindi le terne vengono visitate in ordine
  * crescente secondo l'ordinamento naturale
  * definito nel metodo compareTo()  
  * 

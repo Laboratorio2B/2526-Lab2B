@@ -207,3 +207,11 @@ Classe `Grafo`, cammini minimi con algoritmo di Dijkstra. Classe `LogGrafo`
 e implementazione di un grafo di città mediante l'interfaccia `Nodo` 
 
 -----
+
+
+**Lezione 21** (2/12/25)
+
+Esercitazione su lettura/scrittura di file e uso di collezioni e mappe in Java.
+
+
+-----
