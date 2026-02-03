@@ -34,15 +34,14 @@ print("---- fine stringhe----")
 # valori
 def fun(a,b):
   """restituisce somma e concatenazione"""
-  return a+b,str(a) +str(b)
+  return a+b, str(a)+str(b)
 
 
 # esempio di ricorsione, asserzione, if/else/elsif  
 def fatt(n):
   """calcola il fattoriale"""
-  
   assert n>=0, "Argomento non puo essere negativo"
-  if n==0: 
+  if n==0:
     return 1
   elif n==1:
     return 1
@@ -50,7 +49,7 @@ def fatt(n):
     return 2
   else: 
     return n*fatt(n-1)
-  
+
 # esempio ciclo while con clausola else
 def primo(n):
   """scrive su stdout se n è primo oppure fornisce un suo divisore"""
@@ -67,8 +66,8 @@ def primo(n):
 
 
 # fattoriale senza ricorsione
-# avendo lo stesso nome sovrascrive la
-# precedente definizione di fatt() 
+# ATTENZIONE: avendo lo stesso nome sovrascrive 
+#   la precedente definizione di fatt() 
 def fatt(n):
   assert n>=0, "Argomento non puo essere negativo"
   f = 1
@@ -106,6 +105,7 @@ def esempio_for_lista():
   # prima versione senza usare un indice
   for x in parole:   # itera tra gli elementi di parole
     print(x.upper())
+    x += "ciao"
   print(parole)
   # seconda versione 
   for i in range(len(parole)): # itera tra 0 e len(parole)-1
@@ -126,7 +126,7 @@ def main(n):
 # il contenuto della linea di comando si trova
 # in sys.argv, disponibile perché ho fatto "import sys"
 if len(sys.argv)==2:
-  main(int(sys.argv[1]))
+  main(int(sys.argv[1])) # analogo a atoi(argv[1]) del C
 else:
   print(f"Uso: {sys.argv[0]} intero_positivo")
 
