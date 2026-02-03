@@ -215,3 +215,27 @@ Esercitazione su lettura/scrittura di file e uso di collezioni e mappe in Java.
 
 
 -----
+
+**Lezione 22** (5/12/25)
+
+Prova in itinere sul contenuto delle lezioni 10-21
+
+
+
+
+## Uso di Python per interagire con il file system (05python)
+
+
+**Lezione 23** (3/2/26)
+
+
+Introduzione a Python, differenze e similarità con il C. 
+Sintassi, interprete, istruzioni `if`, `else`, `elif`, `for`, `while`. Definizione di funzioni e Docstring. Liste e tuple.
+
+
+-----
+
+**Lezione 22** (5/2/26)
+
+
+
