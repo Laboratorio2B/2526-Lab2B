@@ -230,12 +230,21 @@ Prova in itinere sul contenuto delle lezioni 10-21
 
 
 Introduzione a Python, differenze e similarità con il C. 
-Sintassi, interprete, istruzioni `if`, `else`, `elif`, `for`, `while`. Definizione di funzioni e Docstring. Liste e tuple.
+Sintassi, interprete, istruzioni `if`, `else`, `elif`, `for`, `while`. 
+Definizione di funzioni e Docstring. Liste e tuple.
+Interprete ed esecuzione dalla linea di programma. 
 
 
 -----
 
+
 **Lezione 22** (5/2/26)
 
+Esecuzione dalla linea di comando: uso di `import` e `sys.argv`. 
+Uso di `#!/usr/bin/env python3` e permesso di execuzione. 
+Dizionari e insiemi: funzionamento interno e vincoli sulle chiavi.  
+Esempio: costruzione classifica leggendo risultati da file. Apertura di file con `with` e `open`. 
+Istruzione `raise` per segnalare gli errori. Sorting di liste utilizzando una key function. 
+Esercizi per casa: *Ribalta file* e *Ordina file*
 
 

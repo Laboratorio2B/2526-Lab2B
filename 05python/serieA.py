@@ -46,6 +46,7 @@ def aggiorna_classifica(c,s1,g1,s2,g2):
     stat[1] += g1
     stat[2] += g2
     c[s1] = stat
+    # potevo scrivere c[s1][0] += p1
   else:
     c[s1] = [p1,g1,g2] # prima occorrenza di s1
   if s2 in c:
@@ -77,7 +78,7 @@ def crea_classifica(f):
     aggiorna_classifica(c, a[2], g1, a[3], g2) 
   return c
   
-  
+    
 # stampa in maniera incolonnata nome, punti, gol fatti e gol subiti   
 def stampa_squadra(nome,punti,golf,gols):
   """Visualizza i dati di una singola squadra"""
