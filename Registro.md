@@ -248,3 +248,25 @@ Istruzione `raise` per segnalare gli errori. Sorting di liste utilizzando una ke
 Esercizi per casa: *Ribalta file* e *Ordina file*
 
 
+---
+
+**Lezione 23** (10/2/26)
+
+Definizione e uso di classi in python. I metodi speciali `__init__`,  ` __str__`, `__repr__`.
+Esplorazione del filesystem in Python: metodi dei moduli `os` e `os.path`.  
+Esempio di ricerca ricorsiva del file piu grande.
+[Permessi](https://linuxcommand.org/lc3_lts0090.php) associati alle directory.
+
+
+---
+
+**Lezione 24** (12/2/26)
+
+Definizione e uso di classi in python. I metodi speciali `__eq__` e ,  `__lt__`.
+Uso del decorator `@functools.total_ordering`.
+Esplorazione del filesystem in Python: 
+concetto di [link symbolici](https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command/)
+e loro gestione. 
+
+
+
