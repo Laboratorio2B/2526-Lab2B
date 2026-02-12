@@ -192,7 +192,7 @@ class Videogioco(Articolo):
         super().__init__(nome, prezzo, commenti)
         self.piattaforma = piattaforma
         
-    # Per esercitarsi: sovrascrivere  __repr__, __str__, __eq__ per includere anche la durata
+    # Per esercitarsi: sovrascrivere  __repr__, __str__, __eq__ per includere anche la piattaforma
 
 
 cod = Videogioco("Call of Duty", 59.99, "PC")

@@ -238,7 +238,7 @@ Interprete ed esecuzione dalla linea di programma.
 -----
 
 
-**Lezione 22** (5/2/26)
+**Lezione 24** (5/2/26)
 
 Esecuzione dalla linea di comando: uso di `import` e `sys.argv`. 
 Uso di `#!/usr/bin/env python3` e permesso di execuzione. 
@@ -250,22 +250,23 @@ Esercizi per casa: *Ribalta file* e *Ordina file*
 
 ---
 
-**Lezione 23** (10/2/26)
+**Lezione 25** (10/2/26)
 
 Definizione e uso di classi in python. I metodi speciali `__init__`,  ` __str__`, `__repr__`.
 Esplorazione del filesystem in Python: metodi dei moduli `os` e `os.path`.  
 Esempio di ricerca ricorsiva del file piu grande.
-[Permessi](https://linuxcommand.org/lc3_lts0090.php) associati alle directory.
 
 
 ---
 
-**Lezione 24** (12/2/26)
+**Lezione 26** (12/2/26)
 
-Definizione e uso di classi in python. I metodi speciali `__eq__` e ,  `__lt__`.
+Uso di classi in python: i metodi speciali `is`, `__eq__`, `__hash__` e ,  `__lt__`.
 Uso del decorator `@functools.total_ordering`.
-Esplorazione del filesystem in Python: 
-concetto di [link symbolici](https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command/)
+Sottoclassi in python; funzioni `type` e `isinstance`. 
+Esplorazione del filesystem in Python. Permessi e comando `chmod`.
+[Permessi](https://linuxcommand.org/lc3_lts0090.php) associati alle directory.
+Concetto di [link symbolici](https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command/)
 e loro gestione. 
 
 
