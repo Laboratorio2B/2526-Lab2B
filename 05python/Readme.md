@@ -233,3 +233,11 @@ prima riga
 Nota: dopo aver letto le linee in un array, ordinarlo mediante il metodo `sort` utilizzando come chiave la lunghezza della stringa.
 
 
+
+### Linee (12/2/26)
+
+
+Risolvere in python l'esercizio C della prova in itinere del 5/12/25 (disponibile su moodle). A questo scopo definire una classe  
+con i due campi `chiave` e `linea`; al posto dell'ABR utilizzare un `set()` per eliminare i duplicati; e una lista per memorizzare gli oggetti e per l'ordinamento finale. L'output ottenuto deve essere lo stesso richiesto per il C (si utilizzi il file esempi.zip per i test).
+
+

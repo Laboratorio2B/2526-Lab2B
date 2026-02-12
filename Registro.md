@@ -271,3 +271,6 @@ e loro gestione.
 
 
 
+---
+
+**Lezione 27** (17/2/26)

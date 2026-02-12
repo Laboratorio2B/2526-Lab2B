@@ -18,7 +18,7 @@ import java.util.TreeSet;
  * crescente secondo l'ordinamento naturale
  * definito nel metodo compareTo()  
  * 
- * Il progrmma mostra anche la lettura da file
+ * Il programma mostra anche la lettura da file
  * e l'uso delle eccezioni 
  */
 

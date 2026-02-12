@@ -31,7 +31,7 @@ class Articolo:
         Articolo.articoli_totali += 1  # modifica dell'attributo di classe
 
     # invocato scrivendo 
-    #  libro.valuta("Mario",4)   
+    # libro.valuta("Mario",4)   
     def valuta(self, utente, stelline):
         assert 1 <= stelline <= 5, "Stelline non valide"
         # ^^^ a <= x <= b è una sintassi ammessa in Python (in Java no; in C compila, ma non ha la semantica che ci si aspetta)
