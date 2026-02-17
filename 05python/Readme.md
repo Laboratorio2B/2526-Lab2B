@@ -241,3 +241,33 @@ Risolvere in python l'esercizio C della prova in itinere del 5/12/25 (disponibil
 con i due campi `chiave` e `linea`; al posto dell'ABR utilizzare un `set()` per eliminare i duplicati; e una lista per memorizzare gli oggetti e per l'ordinamento finale. L'output ottenuto deve essere lo stesso richiesto per il C (si utilizzi il file esempi.zip per i test).
 
 
+### File profondi (17/2/26)
+
+Scrivere un programma `profondi.py` che invocato dalla linea di comando scrivendo 
+```bash
+profondi.py nomedir
+```
+esplora la directory `nomedir` e le sue sottodirectory  e visualizza l'elenco dei file che si trovano a maggiore profondità nell'albero con radice `nomedir` ordinando l'elenco per dimensione di file crescente.
+Ad esempio, se la directory `nomedir` ha la seguente struttura:
+```
+nomedir
+├── dir0_d1
+│   ├── dir0_d0
+│   │   ├── filea0.txt
+│   │   └── filea1.txt
+│   ├── file0.txt
+│   └── file1.txt
+├── dir1_d1
+│   ├── dir1_d0
+│   │   ├── fileb0.txt
+│   │   └── fileb1.txt
+│   ├── file0.txt
+│   └── file1.txt
+├── file0.txt
+└── file1.txt
+
+```
+l'output deve consistere dei 4 file `filea0.txt`, `filea1.txt`, `fileb0.txt`, `fileb1.txt` ordinati per dimensione di file crescente. 
+
+*Suggerimento:* partire dall'esempio `grandi.py` e modificare il metodo `elenco_file` in modo che per ogni file restituisca la tripla `(nome,dimensione,profondita)`. Potete ignorare la problematica che lo stesso file si possa trovare a profondità diverse a seconda dei link seguiti per raggiungerlo.
+

@@ -100,7 +100,7 @@ def elenco_file(nome,dir_esplorate):
       dir_esplorate.add(nomereal)
       # directory nuova e accessibile: esegui ricorsione
       lista_dir = elenco_file(nomecompleto,dir_esplorate)
-      # concatena la lsite di file della sottodirctory
+      # concatena la lista di file della sottodirctory
       lista += lista_dir
   # fine ciclo for sui file di questa directory     
   print(f"End: {nome}",file=sys.stderr)

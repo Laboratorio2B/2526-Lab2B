@@ -231,6 +231,8 @@ class Razionale:
         n = self.numeratore * altro.numeratore
         d = self.denominatore * altro.denominatore
         return Razionale(n, d) # creo un nuovo numero razionale 
+        # ~ self.numeratore *= altro.numeratore
+        # ~ self.denominatore *= altro.denominatore
     
     def __eq__(self, altro):
         return self.numeratore*altro.denominatore == altro.numeratore*self.denominatore
@@ -257,6 +259,7 @@ class Razionale:
         if v==0:
             raise RuntimeError("Il denominatore non può essere nullo")
         self.denominatore = v
+
 
 print("------------------------------------------------------------------")
 print("Definisco due numeri razionali e calcolo la loro somma e prodotto")
