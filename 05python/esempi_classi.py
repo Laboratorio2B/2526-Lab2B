@@ -230,7 +230,7 @@ class Razionale:
         """Metodo chiamato dall'espressione oggetto * altro."""
         n = self.numeratore * altro.numeratore
         d = self.denominatore * altro.denominatore
-        return Razionale(n, d)
+        return Razionale(n, d) # creo un nuovo numero razionale 
     
     def __eq__(self, altro):
         return self.numeratore*altro.denominatore == altro.numeratore*self.denominatore
@@ -241,12 +241,30 @@ class Razionale:
     def __repr__(self):
         return f"Razionale({self.numeratore},{self.denominatore})"
     
-     # Per esercitarsi: implementare __sub__ e __lt__
+    # Per esercitarsi: implementare __sub__ e __lt__
 
+    # esempio definizione metodi per uso indexing operator
+    # (non molto sensato in questa classe)
+    def __getitem__(self,i):
+      # notiamo la scrittura simile all'operatore `test ? v1 : v2` del c 
+      return self.numeratore if i%2==0 else self.denominatore
 
+    def __setitem__(self,i,v):
+      # notiamo la scrittura simile all'operatore `test ? v1 : v2` del c 
+      if i%2==0: 
+        self.numeratore = v
+      else:
+        if v==0:
+            raise RuntimeError("Il denominatore non può essere nullo")
+        self.denominatore = v
+
+print("------------------------------------------------------------------")
 print("Definisco due numeri razionali e calcolo la loro somma e prodotto")
 r1 = Razionale(2, 3)
 r2 = Razionale(1, 5)
 print("r1=", r1)
 print("r2=", r2)
+r1[0]=4
+print("r1=", r1)
 print(f"somma={r1+r2}, prodotto={r1 * r2}")
+

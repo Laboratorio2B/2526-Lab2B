@@ -274,3 +274,25 @@ e loro gestione.
 ---
 
 **Lezione 27** (17/2/26)
+
+
+Metodi speciali per operatori aritmetici (`__add__`, `__mul__`, etc.). 
+Metodi `__getitem__` e `__setitem__`
+Esplorazione del filesystem in Python. Pathe relativi e assoluti. 
+Creazione di elenco dei file ordinato per dimensione decrescente.
+Ricerca di file duplicati in python.
+
+
+---
+
+**Lezione XX** (5/3/26)
+
+Prova in itinere sul linguaggio Python
+
+
+
+---
+
+**Lezione XX** (30/4/26)
+
+Prova in itinere su thread e processi
