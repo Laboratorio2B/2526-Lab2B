@@ -29,7 +29,7 @@ Per informazioni sui permessi dei file o come cambiarli
 Per informazioni sui link simbolici e il loro uso:
    https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command/
 """
-import os, os.path, sys
+import os, os.path, sys, subprocess
 
 
 def main(nomedir):
@@ -44,7 +44,7 @@ def main(nomedir):
   # invocazione funzione ricorsiva per creare l'elenco  
   # contenente le coppie (nomefile,dimensione)
   nomeabs = os.path.abspath(nomedir)
-  elenco = elenco_file(nomedir,set())
+  elenco = elenco_file(nomedir,set()) # cambiare nomedir->nomeabs per avere i path assoluti
   # creo dizionario dim -> [lista file di quella dimensione]
   diz = {}
   for nome,dim in elenco:
@@ -52,18 +52,39 @@ def main(nomedir):
       diz[dim] = [nome]
     else:
       diz[dim].append(nome)
+      
   # stampa gli elenchi che hanno più di un file
   for dim in diz:
     elenco = diz[dim]
     if len(elenco)>1:
       print(f"Devo confrontare i file di dimensione {dim}:")
-      # stampo elenco
-      for f in elenco:
-        print("  " + f)
-      print(50*"-")
+      # ~ # stampo elenco
+      # ~ for f in elenco:
+        # ~ print("  " + f)
+      # ~ print(50*"-")
       # da completare con i confronti ....
+      visualizza_duplicati(elenco)
   return
-    
+
+def cmpshell(a,b):
+  """Confronta due file usando cmp della shell, restituisce il return value di cmp"""
+  ris = subprocess.run(["cmp",a,b], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+  return ris.returncode
+
+
+def visualizza_duplicati(lista):
+  """Dato un insieme di file visualizza quali di loro sono dei duplicati"""
+  
+  assert len(lista)>1, "Devo essere chiamato con lista con + di 1 elemento"
+  for i in range(len(lista)):
+    for j in range(i+1,len(lista)):
+      # esegue il confronto fra lista[i] e lista[j] con il comando cmp
+      if cmpshell(lista[i], lista[j]) == 0:
+        # cmp restituisce 0 -> i file sono uguali 
+        print(f"{lista[i]}\n  identico a:\n{lista[j]}\n")
+        # passa al file successivo
+        break
+      
 
 # funzione ricorsiva per cercare il file più grande
 # nella directory corrente e in tutte le sue sottodirectory
@@ -74,8 +95,10 @@ def elenco_file(nome,dir_esplorate):
 
   assert os.path.isdir(nome), "Argomento deve essere una directory"
   print(f"Begin: {nome}",file=sys.stderr)
-  # inizializzo la lsita di file trovati
-  lista = []
+  # aggiungo nome ai già esplorati
+  dir_esplorate.add(os.path.realpath(nome))
+  # inizializzo la lista di file trovati in questa dir
+  elenco = []
   # ottiene il contenuto della directory 
   listafile = os.listdir(nome)
   for f in listafile:
@@ -92,7 +115,7 @@ def elenco_file(nome,dir_esplorate):
       # il file appena incontrato
       # il file è rappresentato dalla tupla
       #  (nome,dimensione)
-      lista.append((nuovonome,nuovadim))
+      elenco.append((nuovonome,nuovadim))
     else:
       # nomecompleto è una directory: possibile chiamata ricorsiva
       # verifico che la directory sia esplorabile 
@@ -106,14 +129,14 @@ def elenco_file(nome,dir_esplorate):
         print(f"!! Directory {nomecompleto} già esplorata",file=sys.stderr)
         print(f"!!  con nome {nomereal}",file=sys.stderr)
         continue
-      dir_esplorate.add(nomereal)
       # directory nuova e accessibile: esegui ricorsione
       lista_dir = elenco_file(nomecompleto,dir_esplorate)
       # concatena la lista di file della sottodirctory
-      lista += lista_dir
+      elenco += lista_dir
   # fine ciclo for sui file di questa directory     
   print(f"End: {nome}",file=sys.stderr)
-  return lista
+  return elenco
+  
   
   
 # verifico argomenti sulla linea di comando
