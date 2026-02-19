@@ -271,3 +271,20 @@ l'output deve consistere dei 4 file `filea0.txt`, `filea1.txt`, `fileb0.txt`, `f
 
 *Suggerimento:* partire dall'esempio `grandi.py` e modificare il metodo `elenco_file` in modo che per ogni file restituisca la tripla `(nome,dimensione,profondita)`. Potete ignorare la problematica che lo stesso file si possa trovare a profondità diverse a seconda dei link seguiti per raggiungerlo.
 
+
+### Uso di sha1sum (19/2/26)
+
+Modificare lo script `duplicati.py` evitando di confrontare i file con `cmp` usando al suo posto il comando `sha1sum` per ottenre un hash del file. Come visto a lezione, per ottenere l'hash di `filename` basta scrivere 
+```python
+r = subprocess.run(["sha1sum", filename],stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+if r.returncode!=0:
+    raise RuntimeError("sha1sum failed")
+sha = r.stdout.split()[0]
+```
+
+Il nuovo script invece di elencare coppie di file uguali deve elencare gli insiemi di file che hanno tutti lo stesso hash.
+
+
+
+
+

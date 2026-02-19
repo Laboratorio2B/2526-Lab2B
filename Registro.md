@@ -280,7 +280,20 @@ Metodi speciali per operatori aritmetici (`__add__`, `__mul__`, etc.).
 Metodi `__getitem__` e `__setitem__`
 Esplorazione del filesystem in Python. Pathe relativi e assoluti. 
 Creazione di elenco dei file ordinato per dimensione decrescente.
-Ricerca di file duplicati in python.
+Ricerca di file duplicati in python: soluzione basata sulla dimensione dei file.
+
+
+
+---
+
+**Lezione 28** (19/2/26)
+
+Invocazione comandi della shell da python con `subprocess.run`.
+Ricerca di file duplicati in python utilizzando il comando della shell  `cmp`. 
+Ricerca di file basata sul tempo di ultima modifica e uso di espressioni regolari:
+utilizzo della classe `Miofile` per memorizzare le informazioni relative a un singolo file.
+Parametri posizionali e keyword. Uso di `*` e `**` per funzioni con numero arbitrario di parametri.
+
 
 
 ---
