@@ -29,9 +29,13 @@ void *tbody(void *v) {
   dati *d = (dati *) v;
   int primi = 0;
   // cerco i primi nell'intervallo assegnato
+  xpthread_mutex_lock(d->pmutex,__LINE__, __FILE__);
+
   for(int j=d->start;j<d->end;j++)
       if(primo(j)) {
         primi++;
+        // il mutex garantisce che i thread accedono alla
+        // tabella in maniera mutualmente esclusiva
         xpthread_mutex_lock(d->pmutex,__LINE__, __FILE__);
         d->tabella[*(d->pmessi)] = j;
         *(d->pmessi) += 1; 
