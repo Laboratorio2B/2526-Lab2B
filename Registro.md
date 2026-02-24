@@ -296,6 +296,20 @@ Parametri posizionali e keyword. Uso di `*` e `**` per funzioni con numero arbit
 
 
 
+
+## Introduzione ai thread in C (06threads)
+
+
+
+**Lezione 29** (24/2/26)
+
+Introduzione ai thread in C.  Uso di mutex.  
+Uso delle funzioni in `xerrori.c` per la gestione degli errori, compresa la relativa impostazione del `makefile`.
+
+
+
+
+
 ---
 
 **Lezione XX** (5/3/26)
