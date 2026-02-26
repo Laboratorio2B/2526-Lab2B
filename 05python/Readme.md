@@ -319,7 +319,7 @@ e scrivere le singole stringhe di testo con `f.write(stringa)`.
 
 
 
-### Appiattimento di una direcotry (26/2/26)
+### Appiattimento di una directory (26/2/26)
 
 Scrivere uno script python che prende in input sulla linea di comando il nome di due directory `src` e `dest` e crea in `dest`  una serie di *link simbolici* che puntano a a tutte le directory e sottodirectory presenti in `src` (i file regolari che si trovano in `src` sono sostanzialmente ignorati).
 

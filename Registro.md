@@ -309,7 +309,7 @@ Introduzione ai thread in C.  Uso di mutex.
 
 ---
 
-**Lezione 29** (26/2/26)
+**Lezione 30** (26/2/26)
 
 Uso delle funzioni in `xerrori.c` per la gestione degli errori, compresa la relativa impostazione del `makefile`.
 Esercitazione in aula su Python
@@ -317,8 +317,15 @@ Esercitazione in aula su Python
 
 
 ---
+**Lezione 31** (3/3/26)
 
-**Lezione XX** (5/3/26)
+
+Semafori  e loro uso per implementare la tecnica produttori e consumatori.
+
+
+---
+
+**Lezione 32** (5/3/26)
 
 Prova in itinere sul linguaggio Python
 
