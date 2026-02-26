@@ -317,3 +317,50 @@ e scrivere le singole stringhe di testo con `f.write(stringa)`.
 
 **Seconda parte** Durante la lettura del file, costruire anche una mappa che associa ad ogni professione l'insieme delle persone con quella professione. Al termine, per ogni professione (ad esempio `actor`) scrivere un file `actor.txt` contenente l'elenco delle persone con quella professione. Si noti che il file `actress.txt` dovrebbe avere lo stesso contenuto del file `attrici.txt` della prima parte dell'esercizio.
 
+
+
+### Appiattimento di una direcotry (26/2/26)
+
+Scrivere uno script python che prende in input sulla linea di comando il nome di due directory `src` e `dest` e crea in `dest`  una serie di *link simbolici* che puntano a a tutte le directory e sottodirectory presenti in `src` (i file regolari che si trovano in `src` sono sostanzialmente ignorati).
+
+Più in dettaglio:
+
+1.  la directory `dest` deve essere creata dal vostro script: se esiste già un file o una directory con quel nome, il vostro script deve terminare con exit code 1, invocando `exit(1)`
+    
+2.  Per creare una directory consiglio di usare [os.mkdir()](https://docs.python.org/3/library/os.html#os.mkdir), per creare un link usare [os.link()](https://docs.python.org/3/library/os.html#os.link)
+    
+3.  lo script deve ignorare tutti i link simbolici presenti nella directory `src` e sottodirectory
+
+4.  il  nome di ogni link simbolici deve essere ottenuto concatenando i nomi che appaiono nel path della directory target separati dal carattere `_`.  Ad esempio,  se la directory sorgente è la directory `mini` (disponibile in `mini.zip`) con la seguente struttura (ottenuta con il comando `tree -d`):
+
+```
+mini
+├── prima
+│   ├── a
+│   └── prima
+├── seconda
+├── terza
+│   ├── aa
+│   │   └── vuoto
+│   ├── bb
+│   │   ├── prima
+│   │   └── seconda
+│   └── cc
+└── zero
+    └── zero
+```
+
+nella directory destinazione devono essere creati i seguenti link 
+```
+mini
+mini_prima
+mini_prima_a
+mini_prima_prima
+mini_seconda
+mini_terza
+mini_terza_aa
+mini_terza_aa_vuoto
+mini_terza_bb
+...
+```
+si noti che l'ordine dei link all'interno della directory destinazione non e importante, basta che ci siano tutti e con il nome corretto.
