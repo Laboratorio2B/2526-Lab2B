@@ -7,14 +7,11 @@
 // creando thread in modalità detached 
 // l'effetto è quello di rendere non valida 
 // l'operazione pthread_join: in questo modo
-// testtiamo l'uso di xpthread_join in xerrori.c
+// testiamo l'uso di xpthread_join in xerrori.c
 
-
-// mostra come usare una struct per condividere dei parametri 
-// di input e output tra thread principale e ausiliari
-
-// si tratta della situazione piu semplice in cui il lavoro 
-// può essere suddiviso in più parti indipendenti;
+// dato che non puo essere usata la join, il thread
+// principale attende quelli secondari utilizzando
+// una pthread_barrier
 
 
 //Prototipo test di primalità

@@ -320,7 +320,8 @@ Esercitazione in aula su Python
 **Lezione 31** (3/3/26)
 
 
-Semafori  e loro uso per implementare la tecnica produttori e consumatori.
+Semafori e loro uso per implementare la tecnica produttori e consumatori.
+Esempio: `primi_file.c`.
 
 
 ---
