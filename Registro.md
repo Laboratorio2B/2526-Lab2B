@@ -337,7 +337,7 @@ Prova in itinere sul linguaggio Python. [Testo della prova](https://elearning.di
 
 
 Altro esempio di tecnica produttori e consumatori: `primi_files.c`. 
-Esempio di sorting parallelo: `threadSort.c`.
+Esempio di sorting parallelo: `threadSort.c` e `pmergesort.c`.
 
 
 
@@ -352,6 +352,7 @@ Paradigma produttori-consumatori con produttori e consumatori multipli: `multip_
 
 
 ## Condition Variables (08condVars)
+
 
 
 **Lezione 34** (12/3/2)

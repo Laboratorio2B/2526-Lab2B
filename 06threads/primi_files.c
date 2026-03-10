@@ -73,7 +73,7 @@ void *tbody(void *arg)
     // attende prima di passare al prossimo file
     xpthread_barrier_wait(a->fine_file,__LINE__,__FILE__);
   } 
-  return NULL;  // equivalente a pthread_exit(NULL); 
+  pthread_exit(NULL); 
 }     
 
 
