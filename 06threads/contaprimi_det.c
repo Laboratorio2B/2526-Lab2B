@@ -76,6 +76,8 @@ int main(int argc,char *argv[])
   }
   // restituisce il risultato 
   printf("Numero primi tra 1 e %d (escluso): %d\n",m,somma);
+  xpthread_barrier_destroy(&barriera,__LINE__, __FILE__);
+  pthread_attr_destroy(&attr);
   return 0;
 }
 

@@ -328,7 +328,37 @@ Esempio: `primi_file.c`.
 
 **Lezione 32** (5/3/26)
 
-Prova in itinere sul linguaggio Python
+Prova in itinere sul linguaggio Python. [Testo della prova](https://elearning.di.unipi.it/mod/page/view.php?id=26142). 
+
+
+---
+
+**Lezione 33** (10/3/26)
+
+
+Altro esempio di tecnica produttori e consumatori: `primi_files.c`. 
+Esempio di sorting parallelo: `threadSort.c`.
+
+
+
+---
+
+**Lezione 34** (12/3/26)
+
+Paradigma produttori-consumatori con produttori e consumatori multipli: `multip_primi_files.c`
+
+
+
+
+
+## Condition Variables (08condVars)
+
+
+**Lezione 34** (12/3/2)
+
+
+Introduzione alle Condition Variables. Esempi per la gestione della memoria condivisa (`heap.c`).
+
 
 
 

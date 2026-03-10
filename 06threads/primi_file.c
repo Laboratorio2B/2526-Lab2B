@@ -106,7 +106,8 @@ int main(int argc, char *argv[])
     buffer[pindex++ % Buf_size]= n;
     xsem_post(&sem_data_items,__LINE__,__FILE__);
   }
-  puts("Dati del file scritti");
+  puts("Dati del file scritti nel buffer");
+  fclose(f);
   // terminazione threads: 
   for(int i=0;i<cons;i++) {
     xsem_wait(&sem_free_slots,__LINE__,__FILE__);

@@ -7,9 +7,6 @@
 // e l'uso di un mutex per garantire l'accesso
 // esclusivo alla tabella da parte dei thread consumatori
 
-// usare lo script numeri.py per generare un file di testo
-// di cui sapete il numero e la somma dei primi
-
 
 //Prototipi
 bool primo(int n);
@@ -28,9 +25,8 @@ typedef struct {
 void *tbody(void *v) {
   dati *d = (dati *) v;
   int primi = 0;
+  
   // cerco i primi nell'intervallo assegnato
-  xpthread_mutex_lock(d->pmutex,__LINE__, __FILE__);
-
   for(int j=d->start;j<d->end;j++)
       if(primo(j)) {
         primi++;
@@ -92,6 +88,7 @@ int main(int argc,char *argv[])
   printf("\nPrimi in tabella: %d\n",messi);
   // restituisce il numero di primi
   printf("Numero primi tra 1 e %d (escluso): %d\n",m,somma);
+  free(tabella);
   return 0;
 }
 
