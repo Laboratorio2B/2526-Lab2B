@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
     printf("Uso\n\t%s file1 [file2 file3 ... filek]\n", argv[0]);
     exit(1);
   }
-  int cons = 3;  // numero thread consumatori
+  int cons = 5;  // numero thread consumatori
   assert(cons>0);
   int prod = argc-1;  // numero thread produttori
   assert(prod>0);
