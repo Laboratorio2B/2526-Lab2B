@@ -278,7 +278,7 @@ e loro gestione.
 
 Metodi speciali per operatori aritmetici (`__add__`, `__mul__`, etc.). 
 Metodi `__getitem__` e `__setitem__`
-Esplorazione del filesystem in Python. Pathe relativi e assoluti. 
+Esplorazione del filesystem in Python. Path relativi e assoluti. 
 Creazione di elenco dei file ordinato per dimensione decrescente.
 Ricerca di file duplicati in python: soluzione basata sulla dimensione dei file.
 

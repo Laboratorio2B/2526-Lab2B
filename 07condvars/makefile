@@ -2,7 +2,7 @@
 # che vengono usate dalle regole implicite
 CC=gcc
 CFLAGS=-std=c11 -Wall -g -O -pthread
-LDLIBS=-lm -pthread
+LDLIBS=-lm -lrt -pthread
 
 
 # su https://www.gnu.org/software/make/manual/make.html#Implicit-Rules
@@ -16,11 +16,16 @@ LDLIBS=-lm -pthread
 #  $^ viene sostituito con tutti i prerequisiti
 
 # elenco degli eseguibili da creare
-EXECS=contaprimi.out tabella_primi.out contaprimi_det.out primi_file.out primi_files.out threadSort.out pmergesort.out multip_primi_files.out
+EXECS=heap.out
+PC_EXECS=pctest.out pctestCV.out pctestC11.out pctestC11CV.out
 
-# primo target: gli eseguibili sono precondizioni
+
+# primo target: gli eseguibili sono precondizioni del target
 # quindi verranno tutti creati
 all: $(EXECS) 
+
+# versioni di prod/con con semafori oppure condvar
+pctests: $(PC_EXECS)
 
 
 # regola per la creazione degli eseguibili utilizzando xerrori.o
@@ -30,10 +35,28 @@ all: $(EXECS)
 # regola per la creazione di file oggetto che dipendono da xerrori.h
 %.o: %.c xerrori.h
 	$(CC) $(CFLAGS) -c $<
- 
- 
+
+# compila pctest.c con opzione -O3 per ottimizzare la velocità 
+pctest.o: pctest.c xerrori.h
+	$(CC) $(CFLAGS) -O3 -c $< -o $@
+
+# come sopra ma definisce la costante USACV quindi vengono
+# usate le CV invece dei semafori nel paradigma prod-cons
+pctestCV.o: pctest.c xerrori.h
+	$(CC) $(CFLAGS) -O3 -c $<  -o $@ -DUSACV
+
+
+# versione C11 dei precedenti
+pctestC11.out: pctestC11.c semC11.h
+	$(CC) $(CFLAGS) -O3  $< -o $@
+pctestC11CV.out: pctestC11.c semC11.h
+	$(CC) $(CFLAGS) -O3  $< -o $@ -DUSACV
+
+
+
 # esempio di target che non corrisponde a una compilazione
 # ma esegue la cancellazione dei file oggetto e degli eseguibili
 clean: 
-	rm -f *.o $(EXECS)
+	rm -f *.o $(EXECS) $(PC_EXECS)
+
 
