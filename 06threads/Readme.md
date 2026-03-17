@@ -10,11 +10,11 @@ Nel programma `pmergesort.c` fatto a lezione, le due funzioni `pmergesort()` e `
 
 
 
-## Produttore e consumatori multipli (12/3/26)
+## Produttori e consumatori multipli (12/3/26)
 
 Modificare il programma `multip_primi_files.c` in modo che invece di ottenere una singola somma,
 vwnga ottenuta un somma distinta per ogni file come nel programma `primi_files.c`. Dato che ogni consumatore 
-riceve interi da finle diversi, è necessario che ogni unità di lavoro sul buffer consista in due valori: un intero letto da un file e 
+riceve interi da file diversi, è necessario che ogni unità di lavoro sul buffer consista in due valori: un intero letto da un file e 
 un identificatore del file da cui l'intero proviene. Per assicurarsi che i due valori vengano scritti sempre insieme,  
 gli elementi del buffer devono essere coppie definite da una struttura del tipo
 ```

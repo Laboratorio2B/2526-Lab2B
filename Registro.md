@@ -355,10 +355,28 @@ Paradigma produttori-consumatori con produttori e consumatori multipli: `multip_
 
 
 
-**Lezione 34** (12/3/2)
+**Lezione 34** (12/3/26)
 
 
 Introduzione alle Condition Variables. Esempi per la gestione della memoria condivisa (`heap.c`).
+
+
+
+---
+
+**Lezione 35** (17/3/26)
+
+
+Gestione di readers e writers con condition variables (`rw0.c` e `rw.c`).
+Uso di condition variables per schemi produttori consumatori (`multipcv_primi_files.c`)
+Uso di condition variables per emulazione dei semafori (`zem.c`).
+Cenni all'uso della threads library (`thrd_create`, `thrd_join`, etc) in alternativa ai POSIX threads (pthread). 
+
+
+
+---
+
+**Lezione 36** (19/3/26)
 
 
 
@@ -367,4 +385,4 @@ Introduzione alle Condition Variables. Esempi per la gestione della memoria cond
 
 **Lezione XX** (30/4/26)
 
-Prova in itinere su thread e processi
+Prova in itinere su uso di thread e processi

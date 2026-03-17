@@ -16,7 +16,7 @@ LDLIBS=-lm -lrt -pthread
 #  $^ viene sostituito con tutti i prerequisiti
 
 # elenco degli eseguibili da creare
-EXECS=heap.out
+EXECS=heap.out rw0.out multipcv_primi_files.out rw.out
 PC_EXECS=pctest.out pctestCV.out pctestC11.out pctestC11CV.out
 
 
