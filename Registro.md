@@ -390,6 +390,18 @@ Esempi: open/read/write vs fopen/fread/fwrite/fprintf
 Esempio prestazioni di `write(2)` vs `fwrite(3)`.
 
 
+
+---
+
+**Lezione 37** (24/3/26)
+
+
+Flags e loro uso in `open`.
+Permessi dei file e notazione ottale in `open`. 
+Significato e uso di `umask(1)` e `chmod(1)`
+
+Lettura di file binari con `fread()`. 
+
 ---
 
 **Lezione XX** (30/4/26)
