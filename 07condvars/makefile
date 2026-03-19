@@ -18,7 +18,7 @@ LDLIBS=-lm -lrt -pthread
 # elenco degli eseguibili da creare
 EXECS=heap.out rw0.out multipcv_primi_files.out rw.out
 PC_EXECS=pctest.out pctestCV.out pctestC11.out pctestC11CV.out
-
+WRITE_EXECS=scrivi_primi_bin write_speed
 
 # primo target: gli eseguibili sono precondizioni del target
 # quindi verranno tutti creati
@@ -27,6 +27,8 @@ all: $(EXECS)
 # versioni di prod/con con semafori oppure condvar
 pctests: $(PC_EXECS)
 
+# test scrittura file binary
+bintests: $(WRITE_EXECS)
 
 # regola per la creazione degli eseguibili utilizzando xerrori.o
 %.out: %.o xerrori.o
@@ -44,7 +46,6 @@ pctest.o: pctest.c xerrori.h
 # usate le CV invece dei semafori nel paradigma prod-cons
 pctestCV.o: pctest.c xerrori.h
 	$(CC) $(CFLAGS) -O3 -c $<  -o $@ -DUSACV
-
 
 # versione C11 dei precedenti
 pctestC11.out: pctestC11.c semC11.h

@@ -351,7 +351,7 @@ Paradigma produttori-consumatori con produttori e consumatori multipli: `multip_
 
 
 
-## Condition Variables (08condVars)
+## Condition Variables e uso di file binari(08condVars)
 
 
 
@@ -370,7 +370,8 @@ Introduzione alle Condition Variables. Esempi per la gestione della memoria cond
 Gestione di readers e writers con condition variables (`rw0.c` e `rw.c`).
 Uso di condition variables per schemi produttori consumatori (`multipcv_primi_files.c`)
 Uso di condition variables per emulazione dei semafori (`zem.c`).
-Cenni all'uso della threads library (`thrd_create`, `thrd_join`, etc) in alternativa ai POSIX threads (pthread). 
+Cenni all'uso della threads library (`thrd_create`, `thrd_join`, etc) in alternativa ai POSIX threads (pthread);
+fare riferimento alle [dispense su moodle](https://elearning.di.unipi.it/mod/resource/view.php?id=24147). 
 
 
 
@@ -379,6 +380,14 @@ Cenni all'uso della threads library (`thrd_create`, `thrd_join`, etc) in alterna
 **Lezione 36** (19/3/26)
 
 
+Confronto tra condition variables e semafori (`pctest.c` con relative istruzioni nel `makefile`), 
+e confronto con le versioni basate sulla threads library di C11 (`pctestC11.c`).
+
+Lettura e scrittura di file binari in C: funzioni `fread` e `fwrite`; comando `od`.
+System calls vs library functions.
+Sezioni del system manual (comando man).
+Esempi: open/read/write vs fopen/fread/fwrite/fprintf
+Esempio prestazioni di `write(2)` vs `fwrite(3)`.
 
 
 ---
