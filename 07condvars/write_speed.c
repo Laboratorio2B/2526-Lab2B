@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
   // scrittura con fwrite 
   time_t start = time(NULL); // numero di secondi da 1/1/1970
-  FILE *f = fopen("fwrite.out","wb");
+  FILE *f = fopen("fwrite.bin","wb");
   if(f==NULL) termina("Errore apertura file");
   for(int i=0;i<n;i++)
     if(fwrite(&i,sizeof(i),1,f)!=1)
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
   // scrittura con write
   start = time(NULL);
-  int fd = open("write_out",O_WRONLY|O_CREAT,0666);
+  int fd = open("write.bin",O_WRONLY|O_CREAT,0666);
   if(fd<0) termina("Apertura file fallita");
   for(int i=0;i<n;i++)
     if(write(fd,&i,sizeof(i))!=sizeof(int))

@@ -399,8 +399,21 @@ Esempio prestazioni di `write(2)` vs `fwrite(3)`.
 Flags e loro uso in `open`.
 Permessi dei file e notazione ottale in `open`. 
 Significato e uso di `umask(1)` e `chmod(1)`
+Lettura di file binari con `fread()`; richiamo uso di `fseek` e `ftell` per determinare la dimensione di un file.  
 
-Lettura di file binari con `fread()`. 
+
+
+
+## Introduzione ai processi (08processi)
+
+
+
+**Lezione 37** (24/3/26)
+
+
+Creazione di processi in C: comando `fork`.
+Comandi `wait` e `sleep`, processi zombie. 
+Comandi del terminale per monitare i processi: `ps`, `htop`, e `kill`
 
 ---
 
