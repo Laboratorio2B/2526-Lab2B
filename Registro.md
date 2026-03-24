@@ -415,7 +415,23 @@ Creazione di processi in C: comando `fork`.
 Comandi `wait` e `sleep`, processi zombie. 
 Comandi del terminale per monitare i processi: `ps`, `htop`, e `kill`
 
+
+----
+
+
+**Lezione 38** (26/3/26)
+
+
+Esecuzione di processi in background con `&` 
+Concetto di pipe per la comunicazione fra processi, esempio `contaprimi.c` 
+Documentazione sulle pipe, pagine: `pipe(2)` e `pipe(7)`.
+
+
+Esercitazione in aula su uso thread e di file binari.
+
+
 ---
+
 
 **Lezione XX** (30/4/26)
 

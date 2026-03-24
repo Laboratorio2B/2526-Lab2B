@@ -3,7 +3,6 @@
 // esempio di generazione di processi mediante fork
 // e di lettura dei valori di ritorno dei figli mediante wait
 
-
 int main(int argc, char *argv[])
 { 
   int n=3;  // numero di figli da generare
@@ -17,7 +16,11 @@ int main(int argc, char *argv[])
   }
   // genitore
   printf("Io sono %d, re sotto la montagna, figlio di %d\n",getpid(),getppid());
-  sleep(40);
+  // scommentare l'istruzioine sleep che segue
+  // per far si che i figli termino prima del genitore
+  // in questo modo con il comando "htop -F moria" vediamo
+  // lo status di questi processi figli diventare Z (zombie)
+  // sleep(40);
   int tot_draghi = 0;
   for(int i=0;i<n;i++) {
     int status;

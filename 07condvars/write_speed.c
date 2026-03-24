@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
   // scrittura con write
   start = time(NULL);
   int fd = open("write.bin",O_WRONLY|O_CREAT,0666);
+  // 6 -> 110 
   if(fd<0) termina("Apertura file fallita");
   for(int i=0;i<n;i++)
     if(write(fd,&i,sizeof(i))!=sizeof(int))
