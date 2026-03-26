@@ -16,7 +16,7 @@ LDLIBS=-lm -pthread -lrt
 #  $^ viene sostituito con tutti i prerequisiti
 
 # elenco degli eseguibili da creare
-EXECS=moria.out
+EXECS=moria.out contaprimi.out lettore.out scrittore.out
 
 # primo target: gli eseguibili sono precondizioni
 # quindi verranno tutti creati

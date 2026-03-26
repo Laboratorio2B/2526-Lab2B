@@ -422,12 +422,12 @@ Comandi del terminale per monitare i processi: `ps`, `htop`, e `kill`
 **Lezione 38** (26/3/26)
 
 
-Esecuzione di processi in background con `&` 
-Concetto di pipe per la comunicazione fra processi, esempio `contaprimi.c` 
+Esecuzione di processi in background con `&` con eventuale ridirezione dell'output. 
+Concetto di pipe anonima per la comunicazione fra processi, esempio `contaprimi.c` 
 Documentazione sulle pipe, pagine: `pipe(2)` e `pipe(7)`.
 
 
-Esercitazione in aula su uso thread e di file binari.
+[Esercitazione in aula](https://elearning.di.unipi.it/mod/page/view.php?id=26289) su uso thread e di file binari.
 
 
 ---
