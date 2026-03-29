@@ -430,6 +430,22 @@ Documentazione sulle pipe, pagine: `pipe(2)` e `pipe(7)`.
 [Esercitazione in aula](https://elearning.di.unipi.it/mod/page/view.php?id=26289) su uso thread e di file binari.
 
 
+
+----
+
+
+**Lezione 39** (31/3/26)
+
+
+
+Comandi `mkfifo(1)` e `mkfifo(3)`.  
+Comunicazione tra processi mediante named pipe (anche con Python) con riferimento a `pipe(7)`, `fifo(7)`. 
+Lancio di un nuovo eseguibile mediante `fork` seguito da `execl`.
+Introduzione all'uso della memoria condivisa con riferimento a `shm_overview(7)`.
+Uso e significato di `shm_open`, `ftruncate`, `mmap`, `munmap`, `shm_unlink`.
+
+
+
 ---
 
 

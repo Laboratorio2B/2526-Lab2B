@@ -87,6 +87,7 @@ int main(int argc, char *argv[])
 
   // conversione intero -> stringa binaria
   // converte ogni bit di n nei caratteri '1' o '0'
+  printf("argv[1] in 32 bit: ");
   for(int i=31;i>=0;i--) {
     int mask = 1<<i;
     char c = ( (n&mask) !=0  ) ? '1' : '0';
@@ -108,7 +109,7 @@ int main(int argc, char *argv[])
     else if(argv[2][i]!='0') 
       termina("Carattere non valido in argv[2]");
   }
-  printf("Valore convertito: %d\n",n);
+  printf("argv[2] in decimale: %d\n",n);
   
   return 0;
 }
