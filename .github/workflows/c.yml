@@ -10,6 +10,6 @@ jobs:
       - run: |
           cd 02struct
           make bitops
-          bitops 94140480 101100111000111100000111111 > bitops.test
+          ./bitops 94140480 101100111000111100000111111 > bitops.test
           diff bitops.test bitops.check
       
