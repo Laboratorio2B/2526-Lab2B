@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: cd 02struct
+      - run: ls
       - run: make bitops
       - run: bitops 94140480 101100111000111100000111111 > bitops.test
       - run: diff bitops.test bitops.check
