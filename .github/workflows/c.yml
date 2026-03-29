@@ -1,9 +1,9 @@
-name: learn-github-actions
+name: C/C++ CI 
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 
 jobs:
-  check-bitops
+  check-bitops:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
