@@ -10,7 +10,7 @@ def main(nome):
   print(f"=={os.getpid()}== {nome} aperto in lettura",file=sys.stderr)
   tot = 0
   while True:
-    # legge fino a 4 byte mettendoli in un bytarray
+    # legge fino a 4 byte mettendoli in un bytearray
     bs = os.read(fd,4)
     if len(bs)==0:    # non c'e' nessuno che scrive: termina
       break

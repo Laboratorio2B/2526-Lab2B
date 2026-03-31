@@ -25,12 +25,12 @@ int main(int argc,char *argv[])
   close(fd); // dopo mmap e' possibile chiudere il file descriptor
   // scommentare per prenotare la cancellazione dell'oggetto nella shared memory 
   // xshm_unlink(argv[1],QUI); // distrugge shm quando finito
-  
+    
   // riempio array
   for(int i=0; i<n; i++) {
     a[i] = i;
   }
-  
+
   // unmap memoria condivisa e termina
   xmunmap(a,shm_size,QUI);
 
