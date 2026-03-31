@@ -16,7 +16,7 @@ LDLIBS=-lm -pthread -lrt
 #  $^ viene sostituito con tutti i prerequisiti
 
 # elenco degli eseguibili da creare
-EXECS=moria.out contaprimi.out lettore.out scrittore.out
+EXECS=moria.out contaprimi.out lettore.out scrittore.out scrittorex.out shm0.out
 
 # primo target: gli eseguibili sono precondizioni
 # quindi verranno tutti creati
@@ -25,6 +25,10 @@ all: $(EXECS)
 # regola per la creazione degli eseguibili utilizzando xerrori.o
 %.out: %.o xerrori.o
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+
+# regola per la creazione di scrittorex.o con flag USA_EXEC
+scrittorex.o: scrittore.c 
+	$(CC) $(CFLAGS) -c -o $@ $^ -DUSA_EXEC
 
 # pattern rule che esprime che tutti i .o dipendono da xerrori.h
 %.o: %.c xerrori.h
