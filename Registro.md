@@ -427,7 +427,7 @@ Concetto di pipe anonima per la comunicazione fra processi, esempio `contaprimi.
 Documentazione sulle pipe, pagine: `pipe(2)` e `pipe(7)`.
 
 
-[Esercitazione in aula](https://elearning.di.unipi.it/mod/page/view.php?id=26289) su uso thread e di file binari.
+[Esercitazione in aula](https://elearning.di.unipi.it/mod/page/view.php?id=26289) su uso thread e file binari.
 
 
 
