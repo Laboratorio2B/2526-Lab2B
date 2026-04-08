@@ -444,6 +444,21 @@ Uso e significato di `shm_open`, `ftruncate`, `mmap`, `munmap`, `shm_unlink`.
 Esempio creazione shared memory: `shm0.c`
 
 
+
+----
+
+
+**Lezione 40** (9/4/26)
+
+
+Utilizzo dei named semaphore per la sincronizzazione di processi, con riferimento a `sem_overview(7)`. 
+Esempio utilizzo shared memory: `sommaprimi.c` e `sommaprimi_aux.c`.
+Esempio schema produttori consumatori tra processi, sorgenti `shm_prod.c` e `shm_cons.c`.
+
+Introduzione ai segnali con riferimento a `signal(7)`. Segnali da tastiera e comando `kill(1)`. 
+
+
+
 ---
 
 
