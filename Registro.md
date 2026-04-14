@@ -455,9 +455,19 @@ Utilizzo dei named semaphore per la sincronizzazione di processi, con riferiment
 Esempio utilizzo shared memory: `sommaprimi.c` e `sommaprimi_aux.c`.
 Esempio schema produttori consumatori tra processi, sorgenti `shm_prod.c` e `shm_cons.c`.
 
+
+
+----
+
+
+**Lezione 41** (14/4/26)
+
+
+
 Introduzione ai segnali con riferimento a `signal(7)`. Segnali da tastiera e comando `kill(1)`. 
-
-
+Gestione asincrona dei segnali con `sigaction`, esempio: `segnali.c`. 
+Uso modificatore `volatile sig_atomic_t`. Comandi `sleep(3)` e `pause(2)` per evitare il busy waiting. 
+Concetti di multithread safety: MT-safe e async-signal-safe.
 
 ---
 

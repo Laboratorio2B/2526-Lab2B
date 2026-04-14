@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
   // ---- creazione array memoria condivisa
   // la memria considvisa consiste delle aux+2 variabili:
   // | nump | indice | sommap[0] | sommap[1] | sommap[2] .... | 
-  int shm_size = 2*sizeof(int)+sizeof(long); // uso 4+4+8*aux bytes di memoria condivisa
+  int shm_size = 2*sizeof(int)+aux*sizeof(long); // uso 4+4+8*aux bytes di memoria condivisa
   int fd = xshm_open(Sh_mem,O_RDWR | O_CREAT, 0660, QUI);
   xftruncate(fd, shm_size, QUI);
   char *tmp = simple_mmap(shm_size,fd, QUI);
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
   // faccio partire i processi ausiliari
   for(int i=0;i<aux;i++) {
-    if(xfork( QUI)==0) {
+    if(xfork(QUI)==0) {
       if(execl("sommaprimi_aux.out", "sommaprimi_aux.out", argv[i+1], (char *) NULL)==-1)
         xtermina("exec fallita", QUI);
     }
@@ -75,11 +75,11 @@ int main(int argc, char *argv[])
     xsem_post(sem2, QUI);
 
   // prenota distruzione oggetti in memoria condivisa 
-  xshm_unlink(Sh_mem, QUI);  // distrugge shm quando finito
-  xsem_unlink(Sh_sem1, QUI);  // distrugge sem quando finito  
-  xsem_unlink(Sh_sem2, QUI);  // distrugge sem quando finito  
-  xsem_unlink(Mutex, QUI);   // distrugge sem quando finito
-
+  xshm_unlink(Sh_mem, QUI);   
+  xsem_unlink(Sh_sem1, QUI);   
+  xsem_unlink(Sh_sem2, QUI);   
+  xsem_unlink(Mutex, QUI);    
+  
   // unmap memoria condivisa
   xmunmap(tmp,shm_size,QUI);
   // chiude i semafori
