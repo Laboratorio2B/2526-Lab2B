@@ -9,6 +9,7 @@
 // variabili globali utilizzate da main e dal signal handler 
 volatile sig_atomic_t tot_segnali = 0;
 // il perche' della keyword volatile lo abbiamo visto a lezione
+// come anche il significato di sig_atomic_t
 volatile sig_atomic_t continua = 1;
 
 
@@ -56,11 +57,11 @@ int main(int argc, char *argv[])
   
   // rimetti la vecchia gestione di SIGINT 
   sigaction(SIGINT,&oldsa,NULL);
-  // ora SIGINT interrompe l'esecuzione come per default
+  // da ora SIGINT interrompe l'esecuzione come per default
   puts("Vecchio SIGINT ripristinato");
 
   // rientro nel loop, per uscire serve un altro segnale usr2
-  // oppure un SIGINT...
+  // oppure un SIGINT che ora fa terminare il programma 
   continua = 1;
   do { // loop apparentemente senza uscita
     pause();    // attende un segnale
