@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
     }
     // attendo il nuovo valore di alice con sigwaitinfo
     // e verifico che la mossa di alice sia valida
+    // ... aggiungete qui il vostro codice ....
   } while(1); 
   return 0;
 }
