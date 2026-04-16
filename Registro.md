@@ -469,7 +469,22 @@ Gestione asincrona dei segnali con `sigaction`, esempio: `segnali.c`.
 Uso modificatore `volatile sig_atomic_t`. Comandi `sleep(3)` e `pause(2)` per evitare il busy waiting. 
 Concetti di multithread safety: MT-safe e async-signal-safe.
 
+
+----
+
+
+**Lezione 42** (16/4/26)
+
+Gestione sincrona dei segnali: blocco dei segnali  con `pthread_sigblock`, attesa con `sigwait` e `sigwait_info`.
+Invio di informazioni aggiuntive con `kill -q` e `sigqueue`; differenza fra `union` e `struct` 
+Inviare segnali ad uno specifico thread: `pthread_kill` e `pthread_sigqueue`. 
+Segnali real-time, esempio `segnaliRT.c`.
+
+
 ---
+
+
+
 
 
 **Lezione XX** (30/4/26)
