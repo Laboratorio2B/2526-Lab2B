@@ -62,7 +62,7 @@ void push(LockFreeStack* stack, int value) {
     
     Node* old_head = atomic_load(&stack->head);    // Read the current head
     do {
-        new_node->next = old_head;               // Set next pointer for the new node
+        new_node->next = old_head;    // Set next pointer for the new node
     } while (!atomic_compare_exchange_weak(&stack->head, 
                              &old_head, new_node));
 }
@@ -83,7 +83,7 @@ int pop(LockFreeStack* stack, int *value) {
     return 1;
 }
 #else
-// pop() e push() basta sui mutex
+// pop() e push() basate sui mutex
 void push(LockFreeStack* stack, int value) {
   Node* new_node = malloc(sizeof(Node));
   if (!new_node) {

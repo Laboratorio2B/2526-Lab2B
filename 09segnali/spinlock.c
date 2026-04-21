@@ -31,14 +31,14 @@
 // e immediatamente lo pone a true (quindi altri thread devono attendere
 // che si esca dalla sezione critica
 
-
 // il makefile crea gli eseguibili per tutte e tre le versioni:
 //    muspinlock.out  atspinlock.out e spinlock.out
+
 
 // Gli esperimenti mostrano che l'uso della variabile atomic è 
 // piu veloce del mutex che e piu veloce dello spinlock, 
 // però lo spinlock diventa molto più veloce se nel body
-// del while() si mette una chiamata a 
+// del while() si mette una chiamata a sched_yield()
 
 // Viene utilizzata una pthread barrier per far partire tutti 
 // i thread allo stesso momento allo scopo di massimizzare la
@@ -68,11 +68,10 @@ void *tbody(void* arg) {
         *(d->somma) += i;
         pthread_mutex_unlock(d->lock);
       #elif defined(USE_ATOMIC_SUM)
-        atomic_fetch_add(d->somma, i);
-        // equivalente a *(d->somma) += i;
+        atomic_fetch_add(d->somma, i); // somma atomica 
       #else // spinlock
         while(atomic_flag_test_and_set(d->lock)) {
-          sched_yield();    // con questa chiamnata lo spinlock è molto più veloce
+          // sched_yield();    // aggiungendo questa chiamata lo spinlock è molto più veloce
         }
         *(d->somma) += i;// *(d->somma) non è atomico
         // equivalente a   False -> d->lock

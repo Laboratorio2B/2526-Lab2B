@@ -505,9 +505,23 @@ Uso di `atomic_compare_exchange_weak` per la realizzazone di uno stack lock-free
 
 **Lezione 43** (21/4/26)
 
-Threads in Python: il [Global Interpreter Lock](https://realpython.com/python-gil/) e i suoi effetti. [Creazione e join di thread](https://realpython.com/intro-to-python-threading/) : `threads.py`
+Threads in Python: [Creazione e join di thread](https://realpython.com/intro-to-python-threading/) : `threads.py`
 
 
+---
+
+
+**Lezione 44** (23/4/26)
+
+Il [Global Interpreter Lock](https://realpython.com/python-gil/) e i suoi effetti.
+Uso di `ThreadPoolExecutor` e `ProcessPoolExecutor`, 
+i metodi [`map` e `submit`](https://superfastpython.com/threadpoolexecutor-in-python/), esempio: `contaprimi.py`.  
+
+
+----
+
+
+**Lezione 45** (28/4/26)
 
 
 
@@ -516,3 +530,4 @@ Threads in Python: il [Global Interpreter Lock](https://realpython.com/python-gi
 **Lezione 46** (30/4/26)
 
 Prova in itinere sul contenuto delle lezioni da 29 a 43.
+
