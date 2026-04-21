@@ -457,6 +457,9 @@ Esempio schema produttori consumatori tra processi, sorgenti `shm_prod.c` e `shm
 
 
 
+
+## 09 Segnali e varibili atomic (09segnali)
+
 ----
 
 
@@ -478,15 +481,38 @@ Concetti di multithread safety: MT-safe e async-signal-safe.
 Gestione sincrona dei segnali: blocco dei segnali  con `pthread_sigblock`, attesa con `sigwait` e `sigwait_info`.
 Invio di informazioni aggiuntive con `kill -q` e `sigqueue`; differenza fra `union` e `struct` 
 Inviare segnali ad uno specifico thread: `pthread_kill` e `pthread_sigqueue`. 
-Segnali real-time, esempio `segnaliRT.c`.
+Introduzione ai segnali real-time: `man 7 signal`.
 
 
 ---
 
+**Lezione 43** (21/4/26)
+
+Esempio gestione di segnali real time: `segnaliRT.c`.
+
+Variabili `atomic` e [Atomic operations library](https://en.cppreference.com/w/c/atomic).
+Esempio di uso di una variable atomic: `atcontaprimi.c`
+Uso di `atomic_flag_test_and_set` per realizzare uno spinlock; confronto fra spinlock, mutex e variabili atomiche: `spinlock.c`.
+Uso di `atomic_compare_exchange_weak` per la realizzazone di uno stack lock-free; confronto fra stack lock-free e mutex: `stack.c`.
+
+
+
+----
+
+
+## Introduzione ai thread in Python (11pythreads)
+
+
+**Lezione 43** (21/4/26)
+
+Threads in Python: il [Global Interpreter Lock](https://realpython.com/python-gil/) e i suoi effetti. [Creazione e join di thread](https://realpython.com/intro-to-python-threading/) : `threads.py`
 
 
 
 
-**Lezione XX** (30/4/26)
 
-Prova in itinere su uso di thread e processi
+----
+
+**Lezione 46** (30/4/26)
+
+Prova in itinere sul contenuto delle lezioni da 29 a 43.

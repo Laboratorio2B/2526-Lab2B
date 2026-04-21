@@ -15,7 +15,7 @@
 void *tbody(void *v) {
   while(true) {
     sleep(50);
-    printf("====== Thread :%d svegliato\n",gettid());
+    printf("====== Thread: %d svegliato\n",gettid());
   }
   return NULL;
 }
@@ -33,7 +33,7 @@ void *tgestore(void *v) {
     int e = sigwaitinfo(&mask,&sinfo);
     if(e<0) perror("Errore sigwaitinfo");
     s = sinfo.si_signo;
-    printf("Thread %d ricevuto segnale %d da %d",gettid(),s,sinfo.si_pid);
+    printf("Thread %d ricevuto segnale %d dal processo %d",gettid(),s,sinfo.si_pid);
     printf(" con valore %d\n",sinfo.si_value.sival_int);
     if (s == SIGUSR2) {
       // manda a se stesso un misto di segnali real-time e standard 
@@ -66,9 +66,11 @@ void *tgestore(void *v) {
       if (e != 0) xperror(e, "errore pthread_sigqueue");
 
       v.sival_int++;
-      // e = sigqueue(getpid(), SIGRTMIN + 1, v); // in questo modo mando il segnale con sigqueue()
-      // if (e != 0) perror("errore sigqueue"); // sigqueue salva errore in errno
       e = pthread_sigqueue(pthread_self(), SIGRTMIN+1, v);
+      if (e != 0) xperror(e, "errore pthread_sigqueue");
+
+      v.sival_int++;
+      e = pthread_sigqueue(pthread_self(), SIGRTMAX, v);
       if (e != 0) xperror(e, "errore pthread_sigqueue");
 
       // è l'ultimo segnale inviato ma verrà gestito prima di tutti i real time 

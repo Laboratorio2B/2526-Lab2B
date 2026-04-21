@@ -17,10 +17,11 @@ LDLIBS=-lm -pthread -lrt
 
 # elenco degli eseguibili da creare
 EXECS=segnali.out sigwait.out sigwaitinfo.out segnaliRT.out
+EXECS_ATOMIC=stack.out mustack.out spinlock.out atspinlock.out muspinlock.out
 
 # primo target: gli eseguibili sono precondizioni
 # quindi verranno tutti creati
-all: $(EXECS) 
+all: $(EXECS) $(EXECS_ATOMIC) 
 
 # regola per la creazione degli eseguibili utilizzando xerrori.o
 %.out: %.o xerrori.o
@@ -32,6 +33,22 @@ all: $(EXECS)
 # pattern rule specifica per sigwaitinfo.o
 sigwaitinfo.o: sigwait.c xerrori.h
 	$(CC) $(CFLAGS) $< -c -o $@ -DSIGWAITINFO
+
+
+# eseguibili basati spinlock.c 
+spinlock.out: spinlock.c
+	$(CC) $(CFLAGS)  $< -o $@
+muspinlock.out: spinlock.c
+	$(CC) $(CFLAGS)  $< -o $@ -DUSE_MUTEX
+atspinlock.out: spinlock.c
+	$(CC) $(CFLAGS)  $< -o $@ -DUSE_ATOMIC_SUM
+
+# eseguibili basati su stack.c
+stack.out: stack.c
+	$(CC) $(CFLAGS)  $< -o $@ 
+mustack.out: stack.c
+	$(CC) $(CFLAGS)  $< -o $@ -DUSE_MUTEX
+
 
 
 # esempio di target che non corrisponde a una compilazione
