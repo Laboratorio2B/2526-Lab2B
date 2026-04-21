@@ -9,9 +9,6 @@
  * 
  * il comando make crea gli eseguibili per entrambe le versioni
  * 
- * Sfortunatamente la versione lock free non è corretta in quanto
- * occasionalmente termina per un double-free, oppure entra in lock
- * nei prossimi giorni cercherò di capire quale sia il problema
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,8 +62,6 @@ void push(LockFreeStack* stack, int value) {
     
     Node* old_head = atomic_load(&stack->head);    // Read the current head
     do {
-        // re-read the current head, not necessary since old_head is updated by atomic_compare_exchange  
-        // old_head = atomic_load(&stack->head); 
         new_node->next = old_head;               // Set next pointer for the new node
     } while (!atomic_compare_exchange_weak(&stack->head, 
                              &old_head, new_node));

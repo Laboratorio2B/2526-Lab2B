@@ -72,7 +72,7 @@ void *tbody(void* arg) {
         // equivalente a *(d->somma) += i;
       #else // spinlock
         while(atomic_flag_test_and_set(d->lock)) {
-          // sched_yield();    // con questa chiamnata lo spinlock è molto più veloce
+          sched_yield();    // con questa chiamnata lo spinlock è molto più veloce
         }
         *(d->somma) += i;// *(d->somma) non è atomico
         // equivalente a   False -> d->lock

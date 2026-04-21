@@ -7,7 +7,7 @@ import sys, threading, time
 def countdown(a,pausa):
   for i in range (a,-1,-1):
     print(f"{threading.current_thread().name}" ,"-->", i)  
-    time.sleep(0.5)        # attende pausa secondi
+    time.sleep(pausa)        # attende pausa secondi
 
 
 def main(lista):
