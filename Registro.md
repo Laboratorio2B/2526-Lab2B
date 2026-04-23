@@ -514,8 +514,9 @@ Threads in Python: [Creazione e join di thread](https://realpython.com/intro-to-
 **Lezione 44** (23/4/26)
 
 Il [Global Interpreter Lock](https://realpython.com/python-gil/) e i suoi effetti.
-Uso di `ThreadPoolExecutor` e `ProcessPoolExecutor`, 
-i metodi [`map` e `submit`](https://superfastpython.com/threadpoolexecutor-in-python/), esempio: `contaprimi.py`.  
+Modulo [argparse](https://docs.python.org/3/howto/argparse.html) e il suo uso. 
+Modulo [logging](https://realpython.com/python-logging/) e il suo uso.
+Uso di `ThreadPoolExecutor` e `ProcessPoolExecutor`, i metodi [`map` e `submit`](https://superfastpython.com/threadpoolexecutor-in-python/), esempio: `contaprimi.py`.  
 
 
 ----
