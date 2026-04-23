@@ -490,10 +490,12 @@ Introduzione ai segnali real-time: `man 7 signal`.
 
 Esempio gestione di segnali real time: `segnaliRT.c`.
 
-Variabili `atomic` e [Atomic operations library](https://en.cppreference.com/w/c/atomic).
+Variabili `atomic` e [Atomic operations library](https://en.cppreference.com/w/c/atomic), vdere anche il 
 Esempio di uso di una variable atomic: `atcontaprimi.c`
-Uso di `atomic_flag_test_and_set` per realizzare uno spinlock; confronto fra spinlock, mutex e variabili atomiche: `spinlock.c`.
-Uso di `atomic_compare_exchange_weak` per la realizzazone di uno stack lock-free; confronto fra stack lock-free e mutex: `stack.c`.
+[Operazioni atomiche e lock](https://elearning.di.unipi.it/mod/resource/view.php?id=24147): 
+uso di `atomic_flag_test_and_set` per realizzare uno spinlock. 
+Confronto fra spinlock, mutex e variabili atomiche: `spinlock.c`.
+Uso di `atomic_compare_exchange_weak` per la realizzazione di uno stack lock-free; confronto fra stack lock-free e mutex: `stack.c`.
 
 
 
@@ -523,6 +525,8 @@ Uso di `ThreadPoolExecutor` e `ProcessPoolExecutor`, i metodi [`map` e `submit`]
 
 
 **Lezione 45** (28/4/26)
+
+
 
 
 

@@ -66,10 +66,10 @@ def main_pool(a,b,p):
   start = time.time() 
   # se nella riga seguente uso ProcessPoolExecutor invece di ThreadPoolExecutor
   # vengono lanciati processi invece che thread
-  with concurrent.futures.ThreadPoolExecutor(max_workers=p) as executor:
+  with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
     # il return value di ogni singola chiamata a tbody viene messo in risultati
     risultati = executor.map(tbody, dati)
-    print("executor è terminato")
+    print("executor.map è terminato, ma i thread stanno sempre lavorando")
   # il calcolo del tempo di esecuzione e' da fare fuori dal contesto del with
   # perché executor.map() termina prima che abbiano terminato tutti i thread
   # al termine della with viene fatto il join di tutti i thread 
@@ -88,13 +88,14 @@ def main_submit(a,b):
   d1 = Dati(a,c)
   d2 = Dati(c,b)
   start = time.time()
-  with concurrent.futures.ThreadPoolExecutor() as executor:
+  with concurrent.futures.ProcessPoolExecutor() as executor:
     print(f"Posso usare {executor._max_workers} workers");
     r1 = executor.submit(tbody, d1)
     r2 = executor.submit(tbody, d2)
     print("r1 running?", r1.running())
     print("r2 done?", r2.done())
-  # anche qui all'uscita del with viene fatta la join
+  # anche qui all'uscita del with ho la garanzia che
+  # tutti i task sono stati completati
   end = time.time()
   print(f"Tra {a} e {b} ci sono {r1.result()+r2.result()} primi e ci ho messo {end-start:.2f} secondi");
   print("r1 running?", r1.running())
