@@ -3,9 +3,11 @@
 
 
 // Possibile soluzione al problema lettori/scrittori
-// Questa soluzione senza l'uso di wpending è unfair per gli scrittori 
-// che potrebbero essere messi in attesa indefinita
-// se continuano ad arrivare lettori
+// Questa soluzione utilizza wpending per tenere traccia
+// degli scrittori in attesa: fino a quando ce ne sono
+// ai nuovi lettori non viene dato accesso in modo
+// da impedire che gli scrittori vengano scavalcati 
+// da lettori arrivati dopo di loro
 
 typedef struct {
   int readers;

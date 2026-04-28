@@ -502,7 +502,7 @@ Uso di `atomic_compare_exchange_weak` per la realizzazione di uno stack lock-fre
 ----
 
 
-## Introduzione ai thread in Python (11pythreads)
+## Introduzione ai thread in Python (10pythreads)
 
 
 **Lezione 43** (21/4/26)
@@ -527,6 +527,11 @@ Uso di `ThreadPoolExecutor` e `ProcessPoolExecutor`, i metodi [`map` e `submit`]
 **Lezione 45** (28/4/26)
 
 
+Mutex in Python (classe Lock), esempio: `sommaprimi.py`. 
+Altri esempi di Thread Pool: `esempiPool.py`
+[semafori e condition variables in python](https://superfastpython.com/threading-in-python/):
+`somma_primi_files.py` e `rw.py`.
+Ripasso del programma con esempi di domande della prova orale. 
 
 
 
